@@ -1,0 +1,76 @@
+:root {
+  --bg: #efefef;
+
+  /* Colors */
+  --red: #f02929;
+  --yellow: #f0a029;
+  --pink: #cf48ff;
+  --blue: #2d29f0;
+  --green: #98ce6e;
+  --brown: #935915;
+  --cyan: #21d7a0;
+  --sky: #2991f0;
+  --gray: #387070;
+  --purple: #59239d;
+  --white: #ffffff;
+  --black: #000;
+
+  --bg-gradient: linear-gradient(
+    132.91deg,
+    #ffffff -30.941%,
+    #dbe2e5 53.017%,
+    #c3ced3 103.392%,
+    #bfcacf 115.386%,
+    #b2bcc1 165.76%,
+    #adb7bc 208.938%
+  );
+
+  --shadow: 8px 8px 37.1px 0px rgba(0, 0, 0, 0.25);
+
+  /* Styles */
+
+  .red {
+    background: var(--red);
+    order: 2;
+  }
+  .yellow {
+    background: var(--yellow);
+    order: 2;
+  }
+  .pink {
+    background: var(--pink);
+    order: 2;
+  }
+  .blue {
+    background: var(--blue);
+    order: 2;
+  }
+  .green {
+    background: var(--green);
+    order: 2;
+  }
+  .brown {
+    background: var(--brown);
+    order: 2;
+  }
+  .cyan {
+    background: var(--cyan);
+    order: 2;
+  }
+  .sky {
+    background: var(--sky);
+    order: 2;
+  }
+  .gray {
+    background: var(--gray);
+    order: 2;
+  }
+  .purple {
+    background: var(--purple);
+    order: 2;
+  }
+  .black {
+    order: 1;
+    background: var(--black);
+  }
+}

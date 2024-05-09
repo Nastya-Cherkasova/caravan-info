@@ -1,0 +1,12 @@
+.main-content-section {
+}
+.main-content-section__inner {
+  display: grid;
+  grid-template-columns: 1023px 597px;
+  justify-content: space-between;
+}
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}

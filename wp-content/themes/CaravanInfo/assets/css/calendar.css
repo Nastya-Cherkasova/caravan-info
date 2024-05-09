@@ -1,0 +1,12 @@
+.calendar {
+  background: var(--bg-gradient);
+  border-radius: 30px;
+  border: 3px solid var(--white);
+  overflow: hidden;
+  height: 459px;
+}
+
+.calendar table {
+  height: 100%;
+  color: var(--black);
+}

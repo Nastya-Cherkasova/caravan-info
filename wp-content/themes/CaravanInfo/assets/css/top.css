@@ -1,0 +1,44 @@
+.top {
+  background-color: #cad4d8;
+  background-image: url("../img/main/main__bg.png");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.top__inner {
+  min-height: 670px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 100px;
+}
+.top__text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top__title {
+  font-weight: 700;
+  font-size: 160px;
+  translate: -10px;
+}
+.top__subtitle {
+  font-size: 35px;
+}
+
+.top__country {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top .country {
+  --flag-size: 80px;
+  --flag-padding: 13px;
+  --padding: 23px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 31px;
+  height: 80px;
+  border-radius: 84px;
+}

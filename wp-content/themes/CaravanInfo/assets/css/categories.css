@@ -1,0 +1,138 @@
+.categories {
+  margin: 110px 0;
+}
+.categories__inner {
+}
+
+.categories__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 36px 10px;
+}
+
+.categories .category {
+  --ico-width: 35px;
+  --ico-padding: 10px;
+  height: 82px;
+  border-width: 2px;
+  border-color: var(--black);
+  color: var(--black);
+  font-size: 29px;
+  padding: 0 45px;
+  border-radius: 41px;
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.categories ._business {
+  &::before {
+    content: url("../img/common/business.svg");
+  }
+  &:hover {
+    border-color: var(--red);
+    &::before {
+      content: url("../img/common/business_w.svg");
+    }
+  }
+}
+.categories ._tourism {
+  &::before {
+    content: url("../img/common/tourism.svg");
+  }
+  &:hover {
+    border-color: var(--cyan);
+    &::before {
+      content: url("../img/common/tourism_w.svg");
+    }
+  }
+}
+.categories ._culture {
+  &::before {
+    content: url("../img/common/culture.svg");
+  }
+  &:hover {
+    border-color: var(--pink);
+    &::before {
+      content: url("../img/common/culture_w.svg");
+    }
+  }
+}
+.categories ._science {
+  &::before {
+    content: url("../img/common/science.svg");
+  }
+  &:hover {
+    border-color: var(--blue);
+    &::before {
+      content: url("../img/common/science_w.svg");
+    }
+  }
+}
+.categories ._sport {
+  &::before {
+    content: url("../img/common/sport.svg");
+  }
+  &:hover {
+    border-color: var(--green);
+    &::before {
+      content: url("../img/common/sport_w.svg");
+    }
+  }
+}
+.categories ._society {
+  &::before {
+    content: url("../img/common/society.svg");
+  }
+  &:hover {
+    border-color: var(--yellow);
+    &::before {
+      content: url("../img/common/society_w.svg");
+    }
+  }
+}
+.categories ._apk {
+  &::before {
+    content: url("../img/common/apk.svg");
+  }
+  &:hover {
+    border-color: var(--brown);
+    &::before {
+      content: url("../img/common/apk_w.svg");
+    }
+  }
+}
+.categories ._edu {
+  &::before {
+    content: url("../img/common/edu.svg");
+  }
+  &:hover {
+    border-color: var(--sky);
+    &::before {
+      content: url("../img/common/edu_w.svg");
+    }
+  }
+}
+.categories ._history {
+  &::before {
+    content: url("../img/common/history.svg");
+  }
+  &:hover {
+    border-color: var(--purple);
+    &::before {
+      content: url("../img/common/history_w.svg");
+    }
+  }
+}
+.categories ._stars {
+  &::before {
+    content: url("../img/common/stars.svg");
+  }
+  &:hover {
+    border-color: var(--gray);
+    &::before {
+      content: url("../img/common/stars_w.svg");
+    }
+  }
+}
