@@ -60,8 +60,8 @@ $(function () {
   }
 });
 */
-
-document.querySelectorAll(".calendar caption").forEach(function (caption) {
+let clndCap = document.querySelectorAll(".calendar caption");
+clndCap.forEach(function (caption) {
   caption.textContent = caption.textContent.replace(/\d/g, "").trim();
 });
 
@@ -70,6 +70,19 @@ let clnd = document.querySelectorAll(".calendar tbody");
 clnd.forEach((el) => {
   tableFixer(el);
 });
+
+navPoser(clndCap);
+
+function navPoser(calendarCap) {
+  let ew = [];
+  calendarCap.forEach((el) => {
+    ew.push(el.offsetWidth);
+    console.log(Math.max(ew));
+    document.querySelectorAll(".wp-calendar-nav").forEach((el) => {
+      el.style.cssText = `max-width: ${Math.max(...ew) + 60}px`;
+    });
+  });
+}
 
 function tableFixer(calendar) {
   // Удаление объединения ячеек

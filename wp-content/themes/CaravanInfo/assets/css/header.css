@@ -1,5 +1,6 @@
 .header {
   background: var(--white);
+  z-index: 1;
 }
 
 .header--scrolled {

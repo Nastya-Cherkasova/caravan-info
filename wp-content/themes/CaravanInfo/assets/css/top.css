@@ -4,6 +4,7 @@
   background-position: right;
   background-repeat: no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .tag .top {
@@ -50,6 +51,7 @@
   justify-content: center;
   gap: 100px;
   position: relative;
+  padding-bottom: 85px;
 
   &::before {
     position: absolute;
@@ -65,16 +67,18 @@
   flex-direction: column;
   gap: 20px;
   z-index: 1;
-  width: 60%;
+  width: 59%;
 }
 .top__title {
   font-weight: 700;
   font-size: clamp(110px, 7.739vw, 170px);
   translate: -10px;
+  line-height: 110%;
 }
 .top__subtitle {
   font-size: 35px;
   font-size: clamp(20px, 1.823vw, 45px);
+  line-height: 110%;
 }
 
 .top__country {
@@ -94,6 +98,11 @@
   border-radius: 84px;
 }
 
+.tag .top .country {
+  background: var(--white);
+  color: var(--black);
+}
+
 .tag-business .top__inner {
   &::before {
     background: url("../img/top/business.png") bottom 0 right 0 / auto 91%
@@ -103,46 +112,65 @@
 .tag-tourism .top__inner {
   &::before {
     background: url("../img/top/tourism.png") top 0 right 0 / contain no-repeat;
+    bottom: -15%;
+    height: 115%;
   }
 }
 .tag-culture .top__inner {
   &::before {
     background: url("../img/top/culture.png") top 0 right 0 / contain no-repeat;
+    bottom: 20%;
+    left: 25%;
   }
 }
 .tag-science .top__inner {
   &::before {
     background: url("../img/top/science.png") top 0 right 0 / contain no-repeat;
+    height: 110%;
   }
 }
 .tag-sport .top__inner {
   &::before {
     background: url("../img/top/sport.png") top 0 right 0 / contain no-repeat;
+    height: 140%;
+    left: 15%;
+    top: 0;
   }
 }
 .tag-society .top__inner {
   &::before {
     background: url("../img/top/society.png") top 0 right 0 / contain no-repeat;
+    height: 65%;
+    left: 5%;
   }
 }
 .tag-edu .top__inner {
   &::before {
     background: url("../img/top/edu.png") top 0 right 0 / contain no-repeat;
+    height: 80%;
+    bottom: 0px;
+    left: 5%;
   }
 }
 .tag-history .top__inner {
   &::before {
     background: url("../img/top/history.png") top 0 right 0 / contain no-repeat;
+    height: 110%;
   }
 }
 .tag-stars .top__inner {
   &::before {
     background: url("../img/top/stars.png") top 0 right 0 / contain no-repeat;
+    top: 2%;
+    height: 90%;
+    left: 5%;
   }
 }
 .tag-apk .top__inner {
   &::before {
     background: url("../img/top/apk.png") top 0 right 0 / contain no-repeat;
+    bottom: -22%;
+    left: 4%;
   }
 }
 

@@ -46,6 +46,7 @@ function scripts_method()
   wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js');
   wp_enqueue_script('swiper-config', get_template_directory_uri() . '/assets/js/swiper-config.js', array('swiper'), 'null', true);
   wp_enqueue_script('currencyConverter', get_template_directory_uri() . '/assets/js/currencyConverter.js', array(), 'null', true);
+  wp_enqueue_script('weather', get_template_directory_uri() . '/assets/js/weather.js', array(), 'null', true);
   wp_enqueue_script('calendar', get_template_directory_uri() . '/assets/js/calendar.js', array(), 'null', true);
 }
 add_action('wp_enqueue_scripts', 'scripts_method');
