@@ -9,4 +9,13 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".partners__arrow-next",
     prevEl: ".partners__arrow-prev",
   },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      spaceBetween: 25,
+    },
+    1440: {
+      spaceBetween: 35,
+    },
+  },
 });

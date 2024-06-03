@@ -1,5 +1,31 @@
-.sidebar{
+.sidebar {
   display: flex;
   flex-direction: column;
   gap: 50px;
+}
+
+.sidebar-bottom {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .sidebar-bottom {
+    display: block;
+  }
+
+  .sidebar-bottom__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sidebar .calendar,
+  .sidebar .widget_currencyconverter_table {
+    display: none;
+  }
+
+  .sidebar-bottom .calendar,
+  .sidebar-bottom .widget_currencyconverter_table {
+    display: block;
+  }
 }

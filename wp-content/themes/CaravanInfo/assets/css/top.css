@@ -3,26 +3,78 @@
   background-image: url("../img/main/main__bg.png");
   background-position: right;
   background-repeat: no-repeat;
+  position: relative;
 }
+
+.tag .top {
+  /* yt elfkznm  */
+  /* background: linear-gradient(
+      119.95deg,
+      #ffffff80 -7.046%,
+      #dbe2e580 32.887%,
+      #c3ced380 56.846%,
+      #bfcacf80 62.551%,
+      #b2bcc180 86.51%,
+      #adb7bc80 107.047%
+    ),
+    rgb(0, 0, 0), url("../img/top/tag-bg.png"); */
+  background: none;
+  color: var(--white);
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background: #000000a3;
+    z-index: -1;
+  }
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background: url("../img/top/tag-bg.png") center / cover no-repeat;
+    z-index: -2;
+  }
+}
+
 .top__inner {
   min-height: 670px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 100px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+  }
 }
 .top__text {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  z-index: 1;
+  width: 60%;
 }
 .top__title {
   font-weight: 700;
-  font-size: 160px;
+  font-size: clamp(110px, 7.739vw, 170px);
   translate: -10px;
 }
 .top__subtitle {
   font-size: 35px;
+  font-size: clamp(20px, 1.823vw, 45px);
 }
 
 .top__country {
@@ -39,6 +91,118 @@
   background: var(--black);
   color: var(--white);
   font-size: 31px;
-  height: 80px;
   border-radius: 84px;
+}
+
+.tag-business .top__inner {
+  &::before {
+    background: url("../img/top/business.png") bottom 0 right 0 / auto 91%
+      no-repeat;
+  }
+}
+.tag-tourism .top__inner {
+  &::before {
+    background: url("../img/top/tourism.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-culture .top__inner {
+  &::before {
+    background: url("../img/top/culture.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-science .top__inner {
+  &::before {
+    background: url("../img/top/science.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-sport .top__inner {
+  &::before {
+    background: url("../img/top/sport.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-society .top__inner {
+  &::before {
+    background: url("../img/top/society.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-edu .top__inner {
+  &::before {
+    background: url("../img/top/edu.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-history .top__inner {
+  &::before {
+    background: url("../img/top/history.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-stars .top__inner {
+  &::before {
+    background: url("../img/top/stars.png") top 0 right 0 / contain no-repeat;
+  }
+}
+.tag-apk .top__inner {
+  &::before {
+    background: url("../img/top/apk.png") top 0 right 0 / contain no-repeat;
+  }
+}
+
+@media (max-width: 1660px) {
+  .top__inner {
+    min-height: 620px;
+  }
+
+  .top__title {
+  }
+
+  .top__country {
+    justify-content: unset;
+    gap: 20px;
+  }
+
+  .top .country {
+    --flag-size: 55px;
+    --flag-padding: 9px;
+    --padding: 20px;
+    background: var(--black);
+    color: var(--white);
+    font-size: 22px;
+    border-radius: 84px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .top__inner {
+    min-height: unset;
+    gap: 21px;
+    padding: 10px 0 25px;
+  }
+
+  .top__title {
+    letter-spacing: -3px;
+    font-size: clamp(78px, 7.857vw, 110px);
+  }
+
+  .top__subtitle {
+    font-size: 18px;
+  }
+
+  .top__country {
+    justify-content: unset;
+    gap: 20px;
+  }
+
+  .top .country {
+    --flag-size: 51px;
+    --flag-padding: 21px;
+    --padding: 80px;
+    max-width: 221px;
+    width: 100%;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  .top__country {
+    justify-content: center;
+  }
 }

@@ -12,28 +12,26 @@
   ));
   ?>
 
-  <section class="categories">
+  <section class="themes">
     <div class="container">
-      <div class="categories__inner">
-        <?php wp_nav_menu([
-          'theme_location'  => 'under_top',
-          'menu'            => '',
-          'container'       => 'div',
-          'container_class' => '',
-          'menu_class'      => 'categories__list',
-        ]) ?>
-      </div>
+      <?php wp_nav_menu([
+        'theme_location'  => 'under_top',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => '',
+        'menu_class'      => 'themes__list',
+      ]) ?>
     </div>
   </section>
 
-  <section class="main-content-section" id="main-content-section">
+  <section class="home-page-section" id="home-page-section">
     <div class="container">
-      <div class="main-content-section__inner">
+      <div class="home-page-section__inner">
         <section class="news">
           <!-- Выводим 3 свежих поста -->
           <?php
-          global $post;
 
+          global $post;
           $query = new WP_Query([
             'posts_per_page' => 3,
             'orderby'        => 'date',
@@ -80,7 +78,7 @@
 
   <section class="other-news">
     <div class="container">
-      <div class="other-news__inner">
+      <div class="other-news__inner ">
         <!-- Вывод постов без 3 первых -->
         <?php
         global $post;
@@ -134,5 +132,12 @@
   <?php
   get_template_part('assets/parts/partners'); ?>
 
+  <section class="sidebar-bottom">
+    <div class="container">
+      <div class="sidebar-bottom__inner">
+        <?php dynamic_sidebar('sidebar-main'); ?>
+      </div>
+    </div>
+  </section>
 </main>
 <?php get_footer(); ?>

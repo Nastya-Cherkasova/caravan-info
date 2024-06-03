@@ -35,6 +35,22 @@
       </div>
 
       <div class="header__content">
+        <div class="header__content-top">
+          <?php
+          if (has_custom_logo()) {
+            echo get_custom_logo();
+          }
+          ?>
+        </div>
+        <?php wp_nav_menu([
+          'theme_location'  => 'header',
+          'menu'            => '',
+          'container'       => 'div',
+          'container_class' => '',
+          'menu_class'      => 'header__links',
+        ]) ?>
+
+
         <?php wp_nav_menu([
           'theme_location'  => 'dropdown_header_countries',
           'menu'            => '',
@@ -48,7 +64,7 @@
           'menu'            => '',
           'container'       => 'div',
           'container_class' => '',
-          'menu_class'      => 'header__category',
+          'menu_class'      => 'header__themes',
         ]) ?>
       </div>
     </div>

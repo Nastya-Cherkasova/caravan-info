@@ -1,32 +1,69 @@
 $(function () {
-  headerScroll();
+  scrollTargetInit();
   initMenu();
+  headerScroll();
   initShowMore();
   tagColor();
+  infoStyling();
   partnerRepeater();
   flagsInit();
   icoInit();
 
+  // класс для body - адаптивка
+
+  // проверка на наличие админки
+  function adminCheck() {
+    let admin = $("#wpadminbar"),
+      header = $(".header--scrolled");
+
+    if ($(window).width() > 600) {
+      admin.length
+        ? header.css("top", `${admin.height()}px`)
+        : header.css("top", "0px");
+    } else {
+      return false;
+    }
+  }
+
+  $(window).on("scroll", adminCheck);
+
+  // Создание скролл таргета для активации шапки
+  function scrollTargetInit() {
+    let main = $(".main");
+    let target = main.children().eq(1);
+
+    target.addClass("scroll-target");
+  }
+
   // Активировать шапку после скролла
   function headerScroll() {
-    let header = document.querySelector(".header");
-    let targetBlock = document.querySelector("#main-content-section");
+    let header = $(".header");
+    let targetBlock = $(".scroll-target").length
+      ? $(".scroll-target")[0] // Получаем первый DOM-элемент из jQuery-объекта
+      : $("body")[0]; // Получаем первый DOM-элемент из jQuery-объекта
 
     function headerTint() {
-      window.scrollY > 10
-        ? header.classList.add("header--scrolled")
-        : header.classList.remove("header--scrolled");
+      $(window).scrollTop() > 10
+        ? header.addClass("header--scrolled")
+        : header.removeClass("header--scrolled");
 
-      if (window.scrollY > targetBlock.offsetTop) {
-        header.classList.add("active");
+      if (
+        $(window).scrollTop() > $(targetBlock).offset().top &&
+        $(window).width() > 1400
+      ) {
+        $(window).width() > 1400 ? header.addClass("active") : false;
+        $(".header__burger").hide();
       } else {
-        header.classList.remove("active");
+        $(window).width() > 1400 ? header.removeClass("active") : false;
+        $(".header__burger").show();
       }
     }
-    window.addEventListener("scroll", () => {
+
+    $(window).on("scroll", function () {
       headerTint();
-    }),
-      headerTint();
+    });
+
+    headerTint(); // Вызываем сразу после определения для инициализации
   }
 
   // Дополнительное меню при нажатии на 3 полоски (бургер) в шапке
@@ -42,7 +79,11 @@ $(function () {
     let pos;
     let currentCards = $(".other-news__inner > .post");
     {
-      currentCards.slice(0, 3).addClass("show");
+      if ($(window).width() > 1660) {
+        currentCards.slice(0, 3).addClass("show");
+      } else {
+        currentCards.slice(0, 4).addClass("show");
+      }
     }
 
     $(".other-news__show-more").on("click", function (e) {
@@ -69,7 +110,7 @@ $(function () {
       education = "Образование",
       caravanOfStories = "Караван историй",
       outstandingPersonalities = "Выдающиеся личности",
-      tags = $(".post__tag");
+      tags = $(".post__theme");
 
     function bgChange(el, cls) {
       el.addClass(cls);
@@ -113,13 +154,13 @@ $(function () {
 
   // Добавляет флаги тегам
   function flagsInit() {
-    let category = $(".post__category");
+    let theme = $(".post__country");
 
     function countryClass(el, cls) {
       el.addClass(cls);
     }
 
-    category.each(function () {
+    theme.each(function () {
       $(this).addClass("country");
       switch ($(this)[0].innerHTML) {
         case "Таджикистан":
@@ -139,8 +180,6 @@ $(function () {
           break;
       }
     });
-
-    console.log(category);
   }
 
   // Добавляет иконки тегам
@@ -155,7 +194,7 @@ $(function () {
       education = "Образование",
       caravanOfStories = "Караван историй",
       outstandingPersonalities = "Выдающиеся личности",
-      tag = $(".post__tag");
+      tag = $(".post__theme");
 
     function tagClass(el, cls) {
       el.addClass(cls);
@@ -164,39 +203,45 @@ $(function () {
     tag.each(function () {
       switch ($(this)[0].innerHTML) {
         case business:
-          tagClass($(this), "category _business");
+          tagClass($(this), "theme _business");
           break;
         case society:
-          tagClass($(this), "category _society");
+          tagClass($(this), "theme _society");
           break;
         case culture:
-          tagClass($(this), "category _culture");
+          tagClass($(this), "theme _culture");
           break;
         case science:
-          tagClass($(this), "category _science");
+          tagClass($(this), "theme _science");
           break;
         case sports:
-          tagClass($(this), "category _sport");
+          tagClass($(this), "theme _sport");
           break;
         case agriculturalNews:
-          tagClass($(this), "category _apk");
+          tagClass($(this), "theme _apk");
           break;
         case tourism:
-          tagClass($(this), "category _tourism");
+          tagClass($(this), "theme _tourism");
           break;
         case education:
-          tagClass($(this), "category _edu");
+          tagClass($(this), "theme _edu");
           break;
         case outstandingPersonalities:
-          tagClass($(this), "category _stars");
+          tagClass($(this), "theme _stars");
           break;
         case caravanOfStories:
-          tagClass($(this), "category _history");
+          tagClass($(this), "theme _history");
           break;
       }
     });
+  }
 
-    console.log(tag);
+  // Стили для блока инфо
+  function infoStyling() {
+    $(".info-mob__inner").css(
+      "padding-top",
+      `${$(".info-mob__title").height() + 30}px`
+    );
   }
 
   // Функция по повторению партнеров если их мало

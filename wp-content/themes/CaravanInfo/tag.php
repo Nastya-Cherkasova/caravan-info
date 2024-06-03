@@ -19,31 +19,31 @@ $tag = get_query_var('tag');
   }
   if ($tag == 'society') {
     $title = 'Общество';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере общества и&nbsp;социальной жизни.';
   }
   if ($tag == 'culture') {
     $title = 'Культура';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере культуры и&nbsp;развития.';
   }
   if ($tag == 'science') {
     $title = 'Наука';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере научных достижений и&nbsp;открытий.';
   }
   if ($tag == 'sport') {
     $title = 'Спорт';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере спортивной жизни регионов.';
   }
   if ($tag == 'apk') {
     $title = 'Новости АПК';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере агропромышленного комплекса.';
   }
   if ($tag == 'tourism') {
     $title = 'Туризм';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере туризма и&nbsp;путешествий.';
   }
   if ($tag == 'edu') {
     $title = 'Образование';
-    $subtitle = '';
+    $subtitle = 'Актуальные новости и&nbsp;статьи в&nbsp;сфере образования и&nbsp;учёбы.';
   }
   if ($tag == 'stars') {
     $title = 'Выдающиеся личности';
@@ -66,7 +66,6 @@ $tag = get_query_var('tag');
       <div class="filter__content">
 
         <div class="filter__top">
-          <!-- Вывод постов без 4 первых -->
           <?php
           global $post;
 
@@ -103,49 +102,33 @@ $tag = get_query_var('tag');
           ?>
           <!-- Конец вывода постов -->
         </div>
-        <button class="other-news__show-more">Показать еще</button>
       </div>
       </section>
-
-
-      <?php
-      get_template_part('assets/parts/info'); ?>
-
-
-      <!-- Блок только для тэга "Караван Историй" -->
-    </div>
-    <div class="filter__bot">
-      <?php
-      // Запрос WP_Query для получения постов с определенной меткой
-      $args = array(
-        'post_type' => 'post',
-        'tag' => $tag, // Название метки
-        'offset' => 4,
-      );
-      $query = new WP_Query($args);
-      // Цикл для вывода постов
-      if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post();
-      ?>
-          <div class="post">
-            <div class="post__image">
-              <?php the_post_thumbnail(); ?>
-            </div>
-            <span class="post__date"> <?php echo get_the_date('d.m.Y'); ?></span>
-            <a href="<?php echo get_the_permalink(); ?>" class="post__title"><?php the_title() ?></a>
-            <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
-            <div class="post__tags"><?php the_tags('', ''); ?></div>
-          </div>
-      <?php
-        endwhile;
-        wp_reset_postdata();
-      else :
-        // Если нет постов с этой меткой
-        echo '<p>Посты с этой меткой не найдены.</p>';
-      endif;
-      ?>
     </div>
   </div>
+
+  <?php
+
+  $type = 'tag';
+  $typeValue = $tag;
+
+  // Вызов шаблона и передача аргументов
+  get_template_part('assets/parts/other-news', null, array(
+    'type' => $type,
+    'typeValue' => $typeValue
+  ));
+  ?>
+
+  <?php
+  get_template_part('assets/parts/widget-panel'); ?>
+
+  <?php
+  get_template_part('assets/parts/info'); ?>
+
+  <!-- Блок только для тэга "Караван Историй" -->
+  <?php
+  get_template_part('assets/parts/history'); ?>
+
   </div>
   </div>
 </main>

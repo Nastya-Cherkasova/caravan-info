@@ -1,0 +1,40 @@
+.home-page-section {
+}
+.home-page-section .post {
+  min-height: 873px;
+}
+.home-page-section__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  justify-content: space-between;
+}
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+@media (max-width: 1660px) {
+  .home-page-section .post {
+    min-height: 790px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .home-page-section__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-page-section .post {
+    min-height: unset;
+  }
+
+  .news {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+}

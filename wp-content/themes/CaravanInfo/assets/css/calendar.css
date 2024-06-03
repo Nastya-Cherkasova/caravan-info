@@ -3,10 +3,135 @@
   border-radius: 30px;
   border: 3px solid var(--white);
   overflow: hidden;
-  height: 459px;
+  padding: 20px;
+  position: relative;
+}
+
+.calendar * {
+  border-color: var(--black) !important;
+}
+
+.calendar tbody {
+  border-color: transparent !important;
+}
+
+.calendar caption {
+  padding: 15px 0 35px;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  max-width: fit-content;
+  margin: 0 auto;
 }
 
 .calendar table {
   height: 100%;
   color: var(--black);
+}
+
+.calendar td {
+  padding: 21px 18px;
+  max-height: 58px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.calendar th {
+  border-top: none;
+  background: transparent;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 0 18px 21px;
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.calendar tr:nth-child(n) td {
+  &:first-child {
+    border-left: none;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.calendar tr:last-child td {
+  border-bottom: none;
+}
+
+.calendar #today {
+  --width: 45px;
+  padding: 0;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    width: var(--width);
+    height: var(--width);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--black);
+  }
+}
+.calendar #today span {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+}
+
+.wp-calendar-nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  translate: -50% 0;
+  width: 100%;
+  top: 40px;
+  left: 50%;
+}
+
+@media (max-width: 1660px) {
+  .calendar caption {
+    font-size: 35px;
+  }
+
+  .calendar th {
+    padding: 0 15px 16px;
+    font-size: 20px;
+  }
+
+  .calendar td {
+    font-size: 20px;
+    padding: 15px 16px;
+  }
+
+  .calendar #today {
+    --width: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .calendar caption {
+    font-size: clamp(22px, 3.418vw, 35px);
+  }
+
+  .calendar th {
+    padding: 0 10px 9px;
+    font-size: clamp(16px, 1.953vw, 20px);
+  }
+
+  .calendar td {
+    font-size: clamp(14px, 1.953vw, 20px);
+    padding: 10px 9px;
+  }
+
+  .calendar #today {
+    --width: 25px;
+  }
 }

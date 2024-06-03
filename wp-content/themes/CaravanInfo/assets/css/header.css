@@ -39,6 +39,10 @@
     display: none;
   }
 }
+.header__content-top {
+  display: none;
+}
+
 .header.active .header__logo-link {
   &::after {
     display: block;
@@ -125,59 +129,179 @@
   padding-bottom: 30px;
 }
 
+.header__content .header__links {
+  display: none;
+}
+
 .header.active .header__content {
   display: flex;
 }
 
 .header__country,
-.header__category {
+.header__themes {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .header__country {
   gap: 17px;
 }
 
-.header__category {
-  justify-content: space-between;
+.header__themes {
+  gap: 14px;
 }
 
-.tag-business .header__category ._business {
+.tag-business .header__themes ._business {
   background: var(--red);
   border-color: var(--red);
 }
-.tag-society .header__category ._society {
+.tag-society .header__themes ._society {
   background: var(--yellow);
   border-color: var(--yellow);
 }
-.tag-culture .header__category ._culture {
+.tag-culture .header__themes ._culture {
   background: var(--pink);
   border-color: var(--pink);
 }
-.tag-science .header__category ._science {
+.tag-science .header__themes ._science {
   background: var(--blue);
   border-color: var(--blue);
 }
-.tag-sport .header__category ._sport {
+.tag-sport .header__themes ._sport {
   background: var(--green);
   border-color: var(--green);
 }
-.tag-apk .header__category ._apk {
+.tag-apk .header__themes ._apk {
   background: var(--brown);
   border-color: var(--brown);
 }
-.tag-tourism .header__category ._tourism {
+.tag-tourism .header__themes ._tourism {
   background: var(--cyan);
 }
-.tag-edu .header__category ._edu {
+.tag-edu .header__themes ._edu {
   background: var(--sky);
   border-color: var(--sky);
 }
-.tag-stars .header__category ._stars {
+.tag-stars .header__themes ._stars {
   background: var(--gray);
   border-color: var(--gray);
 }
-.tag-history .header__category ._history {
+.tag-history .header__themes ._history {
   background: var(--purple);
   border-color: var(--purple);
+}
+
+/* Responsvie */
+@media (max-width: 1660px) {
+  .header__inner {
+    height: 70px;
+  }
+
+  .header__logo-link {
+    max-width: 80px;
+  }
+
+  .header__links {
+    gap: 35px;
+  }
+
+  .header__link {
+    font-size: 17px;
+  }
+
+  .header__burger {
+    width: 30px;
+    height: 14px;
+
+    &::before,
+    &::after {
+      height: 2px;
+    }
+    &::before {
+      box-shadow: 0 6px 0 #000;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .header.active {
+    background: transparent;
+  }
+
+  .header.active .header__logo-link {
+    &::after {
+      display: none;
+    }
+  }
+  .header.active > .container > .header__inner > .header__logo-link {
+    visibility: hidden;
+  }
+
+  .header__content-top {
+    display: flex;
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .header__content .header__link {
+    display: flex;
+  }
+  .header__content .header__links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header > .container {
+    position: relative;
+  }
+
+  .header.active .header__burger {
+    &::before,
+    &::after {
+      background: var(--black);
+    }
+  }
+
+  .header__content {
+    position: absolute;
+    z-index: 9;
+    position: absolute;
+    background: var(--white);
+    width: 75%;
+    padding: 10px 20px;
+    top: 0%;
+    right: -10px;
+    -webkit-box-shadow: 0px 0px 5px 100vh #00000073;
+    -moz-box-shadow: 0px 0px 5px 100vh #00000073;
+    box-shadow: 0px 0px 5px 100vh #00000073;
+  }
+
+  .header__content * {
+    color: var(--black);
+  }
+
+  .header__content .theme::before {
+    filter: invert(1);
+  }
+
+  .header__content .header__country {
+    flex-direction: column;
+    gap: 7px;
+
+    .country {
+      max-width: fit-content;
+    }
+  }
+
+  .header__content .header__themes {
+    flex-direction: column;
+    gap: 6px;
+    .theme {
+      border-color: var(--black);
+      justify-content: start;
+      max-width: 210px;
+    }
+  }
 }

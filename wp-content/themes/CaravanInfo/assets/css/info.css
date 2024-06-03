@@ -1,12 +1,107 @@
 .info {
 }
-.info__inner {
-  border-radius: 30px;
-  background: var(--white);
-  color: var(--black);
-  border: 71px solid #c27c36;
-  padding: 30px 50px;
+.info-mob__inner {
+  display: none;
 }
+.info__box {
+  padding: 71px;
+  border-radius: 27px;
+  background: #c27c36;
+  position: relative;
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 71px;
+    height: 71px;
+    top: 0;
+    background: url("../img/info/angle.svg") no-repeat center / auto 56%;
+  }
+
+  &::after {
+    right: 0;
+    rotate: 90deg;
+  }
+  &::before {
+    left: 0;
+  }
+}
+
+.info__box .angles {
+  position: relative;
+  display: block;
+  height: calc(100% + 142px);
+  width: calc(100% + 142px);
+  left: -71px;
+  top: 71px;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 71px;
+    height: 71px;
+    bottom: 0;
+    background: url("../img/info/angle.svg") no-repeat center / auto 56%;
+  }
+
+  &::after {
+    right: 0;
+    rotate: 180deg;
+  }
+  &::before {
+    rotate: 275deg;
+    left: 0;
+  }
+}
+.info__inner .rama {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0px;
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 71px;
+    background: url("../img/info/border.svg") repeat-x center / auto 68%;
+    left: 0;
+  }
+  &::before {
+    top: 100%;
+  }
+  &::after {
+    bottom: 100%;
+  }
+}
+
+.info__inner {
+  background: var(--white) url("../img/info/bg.png") center right 0 / auto 100%
+    no-repeat;
+  color: var(--black);
+  padding: 30px 50px;
+  position: relative;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 71px;
+    background: url("../img/info/border.svg") repeat-y center / 68% auto;
+    top: 0;
+  }
+  &::before {
+    left: 100%;
+  }
+  &::after {
+    right: 100%;
+  }
+}
+
 .info__title {
   max-width: 822px;
   height: 159px;
@@ -16,7 +111,7 @@
   }
 }
 .info__descr {
-  max-width: 976px;
+  max-width: 960px;
   font-size: 18px;
   font-weight: 600;
   font-style: italic;
@@ -30,14 +125,20 @@
     top: -5px;
     left: -35px;
   }
+}
+
+.info__descr span {
+  position: relative;
+
   &::after {
+    position: absolute;
     display: inline-block;
     content: url("../img/info/quot.svg");
     transform: scale(-1);
   }
 }
 .info__btn {
-  max-width: 960px;
+  max-width: 457px;
   width: 100%;
   height: 74px;
   display: flex;
@@ -51,5 +152,79 @@
   &:hover {
     background: var(--black);
     color: var(--white);
+  }
+}
+
+@media (max-width: 1660px) {
+  .info__box {
+    display: none;
+  }
+  .info-mob__inner {
+    display: flex;
+    flex-direction: column;
+    background: #c27c36;
+    border-radius: 30px;
+    overflow: hidden;
+    gap: clamp(20px, 3.614vw, 60px);
+    position: relative;
+    padding: 30px;
+    color: var(--white);
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: clamp(340px, 48.855vw, 100%);
+      height: 100%;
+      background: url("../img/info/bg.png") no-repeat 120% / auto 128%;
+      z-index: 1;
+    }
+  }
+
+  .info-mob__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: clamp(338px, 60.241vw, 1000px);
+    width: 100%;
+    z-index: 2;
+  }
+
+  .info-mob__descr {
+    position: relative;
+    max-width: clamp(300px, 57.831vw, 960px);
+    font-size: clamp(14px, 1.084vw, 18px);
+    font-style: italic;
+    line-height: 110%;
+    z-index: 2;
+    &::before {
+      position: absolute;
+      display: inline-block;
+      content: url("../img/info/quot.svg");
+      filter: grayscale(1.1) invert(1) hue-rotate(178deg);
+      top: -10px;
+      left: -30px;
+    }
+  }
+
+  .info-mob__descr span {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      display: inline-block;
+      content: url("../img/info/quot.svg");
+      filter: grayscale(1.1) invert(1) hue-rotate(178deg);
+      transform: scale(-1);
+      right: -30px;
+    }
+  }
+
+  .info-mob__inner .info__btn {
+    z-index: 2;
+    border-color: var(--white);
+    height: clamp(54px, 4.458vw, 74px);
+    font-size: clamp(18px, 1.807vw, 30px);
   }
 }

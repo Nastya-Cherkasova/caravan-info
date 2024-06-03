@@ -54,6 +54,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 360px;
+  position: relative;
 }
 
 main {
@@ -73,10 +75,10 @@ main {
   --flag-size: 34px;
   --flag-padding: 6px;
   --padding: 11px;
-  height: 34px;
+  height: var(--flag-size);
   display: flex;
   align-items: center;
-  border-radius: 36px;
+  border-radius: 50px;
   overflow: hidden;
   padding-left: calc(var(--flag-size) + var(--flag-padding));
   padding-right: var(--padding);
@@ -98,42 +100,127 @@ main {
     width: var(--flag-size);
     height: 100%;
   }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    scale: 1.02;
+    top: 0;
+    left: 0;
+  }
+
+  a {
+    z-index: 5;
+  }
+  &:hover {
+    a {
+      color: transparent; /* финт ушами */
+      scale: 9; /* финт ушами */
+    }
+    &::after {
+      z-index: 3;
+    }
+  }
+}
+
+.category-rus ._ru {
+  a {
+    color: transparent; /* финт ушами */
+    scale: 9; /* финт ушами */
+  }
+  &::after {
+    z-index: 3;
+  }
+}
+.category-kgz ._kg {
+  a {
+    color: transparent; /* финт ушами */
+    scale: 9; /* финт ушами */
+  }
+  &::after {
+    z-index: 3;
+  }
+}
+.category-kz ._kz {
+  a {
+    color: transparent; /* финт ушами */
+    scale: 9; /* финт ушами */
+  }
+  &::after {
+    z-index: 3;
+  }
+}
+.category-uzb ._uz {
+  a {
+    color: transparent; /* финт ушами */
+    scale: 9; /* финт ушами */
+  }
+  &::after {
+    z-index: 3;
+  }
+}
+.category-taj ._taj {
+  a {
+    color: transparent; /* финт ушами */
+    scale: 9; /* финт ушами */
+  }
+  &::after {
+    z-index: 3;
+  }
 }
 
 ._taj {
+  &::after {
+    background: url("../img/common/taj_flag.png") no-repeat center / cover;
+  }
   &::before {
     background: url("../img/common/tj_ico.png") no-repeat center / cover;
   }
 }
 ._ru {
+  &::after {
+    background: url("../img/common/ru_flag.png") no-repeat center / cover;
+  }
   &::before {
     background: url("../img/common/rus_ico.png") no-repeat center / cover;
   }
 }
 ._kg {
+  &::after {
+    background: url("../img/common/kg_flag.png") no-repeat center / cover;
+  }
   &::before {
     background: url("../img/common/kg_ico.png") no-repeat center / cover;
   }
 }
 ._uz {
+  &::after {
+    background: url("../img/common/uz_flag.png") no-repeat center / cover;
+  }
   &::before {
     background: url("../img/common/uz_ico.png") no-repeat center / cover;
   }
 }
 ._kz {
+  &::after {
+    background: url("../img/common/kz_flag.png") no-repeat center / cover;
+  }
   &::before {
     background: url("../img/common/kz_ico.png") no-repeat center / cover;
   }
 }
 
-.category {
+.theme {
   --ico-width: 20px;
   --ico-padding: 6px;
   height: 40px;
   display: flex;
+  justify-content: center;
   align-items: center;
   border: 1px solid var(--white);
-  border-radius: 20px;
+  border-radius: 50px;
   padding: 0 21px;
   background: transparent;
   color: var(--white);
@@ -148,7 +235,7 @@ main {
 }
 
 ._business {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--red);
     border-color: var(--red);
   }
@@ -157,7 +244,7 @@ main {
   }
 }
 ._tourism {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--cyan);
     border-color: var(--cyan);
   }
@@ -166,7 +253,7 @@ main {
   }
 }
 ._culture {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--pink);
     border-color: var(--pink);
   }
@@ -175,7 +262,7 @@ main {
   }
 }
 ._science {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--blue);
     border-color: var(--blue);
   }
@@ -184,7 +271,7 @@ main {
   }
 }
 ._sport {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--green);
     border-color: var(--green);
   }
@@ -193,7 +280,7 @@ main {
   }
 }
 ._society {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--yellow);
     border-color: var(--yellow);
   }
@@ -202,7 +289,7 @@ main {
   }
 }
 ._apk {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--brown);
     border-color: var(--brown);
   }
@@ -211,7 +298,7 @@ main {
   }
 }
 ._edu {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--sky);
     border-color: var(--sky);
   }
@@ -220,7 +307,7 @@ main {
   }
 }
 ._history {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--purple);
     border-color: var(--purple);
   }
@@ -229,11 +316,33 @@ main {
   }
 }
 ._stars {
-  &:hover {
+  &:not(.post__theme):hover {
     background: var(--gray);
     border-color: var(--gray);
   }
   &::before {
     content: url("../img/common/stars_w.svg");
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1660px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .container {
+    max-width: unset;
+    padding: 10px;
+    min-width: 340px;
   }
 }

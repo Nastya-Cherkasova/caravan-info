@@ -1,6 +1,5 @@
 <section class="sidebar">
-  <?php if (!dynamic_sidebar('sidebar-main')) : dynamic_sidebar('sidebar-main');
-  endif; ?>
+  <?php dynamic_sidebar( 'sidebar-main' ); ?>
   <div class="stars">
     <!-- Блок только для тэга "Караван Историй" -->
     <?php

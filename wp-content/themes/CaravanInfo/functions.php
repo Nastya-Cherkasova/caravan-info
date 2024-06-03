@@ -42,9 +42,11 @@ function scripts_method()
   wp_register_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
 
   wp_enqueue_script('jquery');
-  wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', array('jquery'), 'null', true);
-  wp_enqueue_script('swiper-config', get_template_directory_uri() . '/assets/js/swiper-config.js', array('jquery'), 'null', true);
   wp_enqueue_script('main_script', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), 'null', true);
+  wp_enqueue_script('swiper', 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js');
+  wp_enqueue_script('swiper-config', get_template_directory_uri() . '/assets/js/swiper-config.js', array('swiper'), 'null', true);
+  wp_enqueue_script('currencyConverter', get_template_directory_uri() . '/assets/js/currencyConverter.js', array(), 'null', true);
+  wp_enqueue_script('calendar', get_template_directory_uri() . '/assets/js/calendar.js', array(), 'null', true);
 }
 add_action('wp_enqueue_scripts', 'scripts_method');
 
@@ -54,9 +56,10 @@ function caravan_menus()
   $locations = array(
     'header' => __('Меню в шапке', 'caranav'),
     'dropdown_header_countries' => __('Страны в шапке', 'caranav'),
-    'dropdown_header_category' => __('Категории в шапке', 'caranav'),
+    'dropdown_header_theme' => __('Категории в шапке', 'caranav'),
     'top' => __('Страны на баннере', 'caranav'),
     'under_top' => __('Категории под баннером', 'caranav'),
+    'widget-themes' => __('Список в виджете', 'caranav'),
     'footer' => __('Меню в подвале', 'caranav'),
   );
 
@@ -69,7 +72,7 @@ add_filter('the_tags', 'add_tag_class');
 
 function add_tag_class($tags)
 {
-  $tags = str_replace('<a', '<a class="post__tag"', $tags);
+  $tags = str_replace('<a', '<a class="post__theme"', $tags);
   return $tags;
 }
 
@@ -78,7 +81,7 @@ add_filter('the_category', 'add_category_class');
 
 function add_category_class($categories)
 {
-  $categories = str_replace('<a', '<a class="post__category"', $categories);
+  $categories = str_replace('<a', '<a class="post__country"', $categories);
   return $categories;
 }
 

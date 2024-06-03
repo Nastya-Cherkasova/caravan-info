@@ -1,19 +1,18 @@
-.categories {
+.themes {
   margin: 110px 0;
 }
-.categories__inner {
-}
 
-.categories__list {
+.themes__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 36px 10px;
 }
 
-.categories .category {
+.themes .theme {
   --ico-width: 35px;
   --ico-padding: 10px;
+  flex-grow: 1;
   height: 82px;
   border-width: 2px;
   border-color: var(--black);
@@ -26,7 +25,7 @@
   }
 }
 
-.categories ._business {
+.themes ._business {
   &::before {
     content: url("../img/common/business.svg");
   }
@@ -37,7 +36,7 @@
     }
   }
 }
-.categories ._tourism {
+.themes ._tourism {
   &::before {
     content: url("../img/common/tourism.svg");
   }
@@ -48,7 +47,7 @@
     }
   }
 }
-.categories ._culture {
+.themes ._culture {
   &::before {
     content: url("../img/common/culture.svg");
   }
@@ -59,7 +58,7 @@
     }
   }
 }
-.categories ._science {
+.themes ._science {
   &::before {
     content: url("../img/common/science.svg");
   }
@@ -70,7 +69,7 @@
     }
   }
 }
-.categories ._sport {
+.themes ._sport {
   &::before {
     content: url("../img/common/sport.svg");
   }
@@ -81,7 +80,7 @@
     }
   }
 }
-.categories ._society {
+.themes ._society {
   &::before {
     content: url("../img/common/society.svg");
   }
@@ -92,7 +91,7 @@
     }
   }
 }
-.categories ._apk {
+.themes ._apk {
   &::before {
     content: url("../img/common/apk.svg");
   }
@@ -103,7 +102,7 @@
     }
   }
 }
-.categories ._edu {
+.themes ._edu {
   &::before {
     content: url("../img/common/edu.svg");
   }
@@ -114,7 +113,7 @@
     }
   }
 }
-.categories ._history {
+.themes ._history {
   &::before {
     content: url("../img/common/history.svg");
   }
@@ -125,7 +124,7 @@
     }
   }
 }
-.categories ._stars {
+.themes ._stars {
   &::before {
     content: url("../img/common/stars.svg");
   }
@@ -134,5 +133,62 @@
     &::before {
       content: url("../img/common/stars_w.svg");
     }
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 1660px) {
+  .themes {
+    margin:  30px 0;
+  }
+  
+  .themes__list {
+    gap: 10px 5px;
+  }
+
+  .themes .theme {
+    --ico-width: 25px;
+    --ico-padding: 10px;
+    height: 60px;
+    font-size: 23px;
+    padding: 0 45px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .themes {
+    margin: 30px 0;
+  }
+  .themes .theme {
+    --ico-width: 20px;
+    --ico-padding: 5px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .themes__list{
+    gap: 10px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .themes {
+    margin: 0;
+  }
+  .themes__list {
+    gap: 16px 5px;
+  }
+
+  .themes__list .theme {
+    max-width: 164px;
+    width: 100%;
+    height: 40px;
+    font-size: 13.7px;
+  }
+  .themes__list ._history,
+  .themes__list ._stars {
+    max-width: 100%;
   }
 }
