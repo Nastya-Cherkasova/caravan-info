@@ -38,25 +38,11 @@ $(function () {
   // Активировать шапку после скролла
   function headerScroll() {
     let header = $(".header");
-    let targetBlock = $(".scroll-target").length
-      ? $(".scroll-target")[0] // Получаем первый DOM-элемент из jQuery-объекта
-      : $("body")[0]; // Получаем первый DOM-элемент из jQuery-объекта
 
     function headerTint() {
-      $(window).scrollTop() > 10
+      $(window).scrollTop() > 1
         ? header.addClass("header--scrolled")
         : header.removeClass("header--scrolled");
-
-      if (
-        $(window).scrollTop() > $(targetBlock).offset().top &&
-        $(window).width() > 1400
-      ) {
-        $(window).width() > 1400 ? header.addClass("active") : false;
-        $(".header__burger").hide();
-      } else {
-        $(window).width() > 1400 ? header.removeClass("active") : false;
-        $(".header__burger").show();
-      }
     }
 
     $(window).on("scroll", function () {
