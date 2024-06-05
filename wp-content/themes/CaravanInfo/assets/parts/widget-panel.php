@@ -4,7 +4,8 @@
       <div class="widget-panel__other">
 
         <div class="weather">
-          <div id="19a2b17fe451f28c6c40149ca898ca0b" class="ww-informers-box-854753">
+          <img src="<?php bloginfo('template_url'); ?>/assets/img/common/weather.png" alt="">
+          <!-- <div id="19a2b17fe451f28c6c40149ca898ca0b" class="ww-informers-box-854753">
             <p class="ww-informers-box-854754"><a href="https://world-weather.ru/">world-weather.ru</a><br><a href="https://world-weather.ru/pogoda/russia/saint_petersburg/">Прогноз погоды в Санкт-Петербурге на завтра</a></p>
           </div>
           <script async type="text/javascript" charset="utf-8" src="https://world-weather.ru/wwinformer.php?userid=19a2b17fe451f28c6c40149ca898ca0b"></script>
@@ -47,7 +48,7 @@
                 opacity: 1
               }
             }
-          </style>
+          </style> -->
         </div>
 
         <?php wp_nav_menu([

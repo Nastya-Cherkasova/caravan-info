@@ -60,12 +60,35 @@ $(function () {
   }
 });
 */
-let clndCap = document.querySelectorAll(".calendar caption");
+
+var clndCap = document.querySelectorAll(".calendar caption");
+var clnd = document.querySelectorAll(".calendar tbody");
+var clndNavPrev = document.querySelectorAll(".wp-calendar-nav-prev a");
+var clndNavNext = document.querySelectorAll(".wp-calendar-nav-next a");
+
+var prevArrow =
+  '<svg width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5547 2L1.99913 12.6296L13.5547 22.2222" stroke="black" stroke-width="2.16667" stroke-linecap="round"/></svg>';
+var nextArrow =
+  '<svg width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 2L13.5556 12.6296L2 22.2222" stroke="black" stroke-width="2.16667" stroke-linecap="round"/></svg>';
+
+prevChanger(clndNavPrev);
+nextChanger(clndNavNext);
+
+function prevChanger(nav) {
+  nav.forEach((el) => {
+    el.innerHTML = prevArrow;
+  });
+}
+
+function nextChanger(nav) {
+  nav.forEach((el) => {
+    el.innerHTML = nextArrow;
+  });
+}
+
 clndCap.forEach(function (caption) {
   caption.textContent = caption.textContent.replace(/\d/g, "").trim();
 });
-
-let clnd = document.querySelectorAll(".calendar tbody");
 
 clnd.forEach((el) => {
   tableFixer(el);
@@ -77,7 +100,6 @@ function navPoser(calendarCap) {
   let ew = [];
   calendarCap.forEach((el) => {
     ew.push(el.offsetWidth);
-    console.log(Math.max(ew));
     document.querySelectorAll(".wp-calendar-nav").forEach((el) => {
       el.style.cssText = `max-width: ${Math.max(...ew) + 60}px`;
     });

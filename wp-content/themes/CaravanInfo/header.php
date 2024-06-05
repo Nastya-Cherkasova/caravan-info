@@ -29,6 +29,20 @@
             'menu_class'      => 'header__links',
           ]) ?>
 
+          <div onclick="langChanger()" class="header__lang">
+            <span>Ru <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.882812 1.41956C0.882812 1.41956 5.55957 10.4899 5.91932 10.4899C6.27907 10.4899 10.9558 1.41956 10.9558 1.41956" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div class="header__langs">
+              <span>Ru</span>
+              <span>Kz</span>
+              <span>Uzs</span>
+              <span>Tjs</span>
+              <span>Kgs</span>
+            </div>
+          </div>
+
           <span class="header__burger"></span>
         </div>
 

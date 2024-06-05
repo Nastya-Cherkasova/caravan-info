@@ -27,7 +27,8 @@ wp_reset_postdata(); // Сбрасываем $post
     global $post;
 
     $query = new WP_Query([
-      'tag' => 'history'
+      'tag' => 'history',
+      'posts_per_page' => 1
     ]);
 
     if ($query->have_posts()) {

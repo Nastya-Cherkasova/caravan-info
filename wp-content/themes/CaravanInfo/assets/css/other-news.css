@@ -8,7 +8,7 @@
 .other-news__inner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 50px;
   width: 100%;
 }

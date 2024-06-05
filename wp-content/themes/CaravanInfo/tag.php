@@ -61,17 +61,77 @@ $tag = get_query_var('tag');
   ));
   ?>
 
-  <div class="filter">
-    <div class="container">
-      <div class="filter__content">
+  <?php if ($tag != 'stars' && $tag != 'history') { ?>
 
-        <div class="filter__top">
+    <section class="themes">
+      <div class="container">
+        <?php wp_nav_menu([
+          'theme_location'  => 'under_top',
+          'menu'            => '',
+          'container'       => 'div',
+          'container_class' => '',
+          'menu_class'      => 'themes__list',
+        ]) ?>
+      </div>
+    </section>
+
+    <section class="filter">
+      <div class="container">
+        <div class="filter__content">
+
+          <div class="filter__top">
+            <?php
+            global $post;
+
+            $query = new WP_Query([
+              'post_type' => 'post',
+              'posts_per_page' => 4, // Все посты
+              'tag' => $tag // Название метки
+            ]);
+
+            if ($query->have_posts()) {
+              while ($query->have_posts()) {
+                $query->the_post();
+            ?>
+                <div class="post">
+                  <div class="post__image">
+                    <?php the_post_thumbnail(); ?>
+                  </div>
+                  <span class="post__date"> <?php echo get_the_date('d.m.Y'); ?></span>
+                  <a href="<?php echo get_the_permalink(); ?>" class="post__title"><?php the_title() ?></a>
+                  <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
+                  <div class="post__tags">
+                    <?php
+                    the_category();
+                    ?>
+                  </div>
+                </div>
+            <?php
+              }
+            } else {
+              // Постов не найдено
+            }
+
+            wp_reset_postdata(); // Сбрасываем $post
+            ?>
+            <!-- Конец вывода постов -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <?php }
+  if (($tag == 'stars')) { ?>
+    <!-- Выдающиеся личности -->
+    <section class="filter-stars" id="filter-stars">
+      <div class="container">
+        <div class="filter-stars__inner">
           <?php
           global $post;
 
           $query = new WP_Query([
             'post_type' => 'post',
-            'posts_per_page' => 4, // Все посты
+            'posts_per_page' => -1, // Все посты
             'tag' => $tag // Название метки
           ]);
 
@@ -79,16 +139,16 @@ $tag = get_query_var('tag');
             while ($query->have_posts()) {
               $query->the_post();
           ?>
-              <div class="post">
-                <div class="post__image">
+              <div class="post-star">
+                <div class="post-star__image">
                   <?php the_post_thumbnail(); ?>
                 </div>
-                <span class="post__date"> <?php echo get_the_date('d.m.Y'); ?></span>
-                <a href="<?php echo get_the_permalink(); ?>" class="post__title"><?php the_title() ?></a>
-                <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
+                <span class="post-star__date"> <?php echo get_the_date('d.m.Y'); ?></span>
+                <a href="<?php echo get_the_permalink(); ?>" class="post-star__name"><?php the_title() ?></a>
+                <?php the_excerpt(); ?>
                 <div class="post__tags">
                   <?php
-                  the_category();
+                  the_tags('', '');
                   ?>
                 </div>
               </div>
@@ -103,21 +163,68 @@ $tag = get_query_var('tag');
           <!-- Конец вывода постов -->
         </div>
       </div>
-      </section>
-    </div>
-  </div>
+    </section>
+
+  <?php }
+  if ($tag == 'history') { ?>
+    <!-- Караван историй -->
+
+    <section class="filter-history" id="filter-history">
+      <div class="container">
+        <div class="filter-history__inner">
+          <?php
+          global $post;
+
+          $query = new WP_Query([
+            'post_type' => 'post',
+            'posts_per_page' => -1, // Все посты
+            'tag' => $tag // Название метки
+          ]);
+
+          if ($query->have_posts()) {
+            while ($query->have_posts()) {
+              $query->the_post();
+          ?>
+              <div class="post-history">
+                <div class="post-history__text">
+                  <a href="<?php echo get_the_permalink(); ?>" class="post-history__name"><?php the_title() ?></a>
+                  <?php the_excerpt(); ?>
+                </div>
+
+                <div class="post-history__image">
+                  <?php the_post_thumbnail(); ?>
+                </div>
+              </div>
+          <?php
+            }
+          } else {
+            // Постов не найдено
+          }
+
+          wp_reset_postdata(); // Сбрасываем $post
+          ?>
+          <!-- Конец вывода постов -->
+        </div>
+      </div>
+    </section>
+
+
+  <?php } ?>
 
   <?php
+  if ($tag != 'stars' && $tag != 'history') {
 
-  $type = 'tag';
-  $typeValue = $tag;
+    $type = 'tag';
+    $typeValue = $tag;
 
-  // Вызов шаблона и передача аргументов
-  get_template_part('assets/parts/other-news', null, array(
-    'type' => $type,
-    'typeValue' => $typeValue
-  ));
+    // Вызов шаблона и передача аргументов
+    get_template_part('assets/parts/other-news', null, array(
+      'type' => $type,
+      'typeValue' => $typeValue
+    ));
+  }
   ?>
+
 
   <?php
   get_template_part('assets/parts/widget-panel'); ?>

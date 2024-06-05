@@ -29,8 +29,12 @@ extract($args);
             <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
             <div class="post__tags">
               <?php
-              the_category();
-              the_tags('', '');
+              if (is_tag()) {
+                the_category();
+              }
+              if (is_category()) {
+                the_tags('', '');
+              }
               ?>
             </div>
           </div>

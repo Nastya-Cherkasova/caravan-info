@@ -260,3 +260,10 @@ $(function () {
     }
   }
 });
+
+function langChanger() {
+  let langMenu = document.querySelector(".header__langs"),
+    langBtn = document.querySelector(".header__lang");
+  langMenu.classList.toggle("active");
+  langBtn.classList.toggle("active");
+}

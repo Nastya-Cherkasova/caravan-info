@@ -29,6 +29,7 @@
   font-style: italic;
   color: #8d8d8d;
   line-height: 110%;
+  word-break: break-all;
 }
 .history-block__btn {
   width: 100%;
@@ -52,6 +53,51 @@
   }
 }
 
+/* Стили для блока историй на отдельной странице */
+
+.filter-history {
+}
+.filter-history__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.post-history {
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  border-radius: 30px;
+  border: 2px solid var(--purple);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.post-history__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 800px;
+}
+
+.post-history__name {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.post-history p {
+  font-weight: 600;
+  font-size: 18px;
+  font-style: italic;
+  color: #8d8d8d;
+  word-break: break-all;
+}
+
+.post-history__image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 /* Responsive */
 @media (max-width: 1660px) {
   .history-block {
@@ -64,8 +110,26 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .post-history {
+    flex-direction: column-reverse;
+  }
+  .post-history__text {
+    gap: 20px;
+  }
+  .post-history__image {
+    height: 301px;
+  }
+}
+
 @media (max-width: 1024px) {
   .history {
     display: none;
+  }
+}
+
+@media (max-width: 552px) {
+  .post-history {
+    padding: 20px;
   }
 }

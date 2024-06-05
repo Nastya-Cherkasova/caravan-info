@@ -49,3 +49,10 @@
     filter: invert(1);
   }
 }
+
+.widget-panel .weather {
+  flex-grow: 1;
+  img {
+    object-fit: contain;
+  }
+}

@@ -106,5 +106,5 @@ add_filter('excerpt_more', fn () => '...');
 
 //  Изменение длины обрезаемого текста the_excerpt();
 add_filter('excerpt_length', function () {
-  return 15;
+  return 999;
 });
