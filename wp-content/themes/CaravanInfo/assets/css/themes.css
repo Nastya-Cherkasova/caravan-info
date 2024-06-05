@@ -1,5 +1,6 @@
 .themes {
   margin: 110px 0;
+  display: none;
 }
 
 .themes__list {
@@ -159,6 +160,7 @@
 @media (max-width: 1400px) {
   .themes {
     margin: 30px 0;
+    display: block;
   }
   .themes .theme {
     --ico-width: 20px;

@@ -72,7 +72,6 @@
 .top__title {
   font-weight: 700;
   font-size: clamp(110px, 7.739vw, 170px);
-  translate: -10px;
   line-height: 110%;
 }
 .top__subtitle {
@@ -207,7 +206,7 @@
 
   .top__title {
     letter-spacing: -3px;
-    font-size: clamp(78px, 7.857vw, 110px);
+    font-size: clamp(48px, 7.857vw, 110px);
   }
 
   .top__subtitle {
@@ -229,7 +228,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 552px) {
   .top__country {
     justify-content: center;
   }

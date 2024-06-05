@@ -56,3 +56,18 @@
     object-fit: contain;
   }
 }
+
+@media (max-width: 1660px) {
+}
+
+@media (max-width: 1400px) {
+  .widget-panel__inner {
+    grid-template-columns: 1fr;
+  }
+  .widget-panel__themes {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+}

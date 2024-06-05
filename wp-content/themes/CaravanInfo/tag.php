@@ -60,20 +60,20 @@ $tag = get_query_var('tag');
     'subtitle' => $subtitle,
   ));
   ?>
+  <section class="themes">
+    <div class="container">
+      <?php wp_nav_menu([
+        'theme_location'  => 'under_top',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => '',
+        'menu_class'      => 'themes__list',
+      ]) ?>
+    </div>
+  </section>
 
   <?php if ($tag != 'stars' && $tag != 'history') { ?>
 
-    <section class="themes">
-      <div class="container">
-        <?php wp_nav_menu([
-          'theme_location'  => 'under_top',
-          'menu'            => '',
-          'container'       => 'div',
-          'container_class' => '',
-          'menu_class'      => 'themes__list',
-        ]) ?>
-      </div>
-    </section>
 
     <section class="filter">
       <div class="container">

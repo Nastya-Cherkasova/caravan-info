@@ -144,7 +144,7 @@
 
   <!-- Widget-panel start-->
   <?php
-  $widget_panel = get_template_part('assets/parts/widget-panel'); 
+  $widget_panel = get_template_part('assets/parts/widget-panel');
   echo $widget_panel;
   ?>
   <!-- Widget-panel end -->
