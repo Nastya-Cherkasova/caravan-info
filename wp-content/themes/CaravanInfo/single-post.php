@@ -1,26 +1,36 @@
 <?php get_header(); ?>
 <main class="main">
   <div class="blog">
+    <div class="blog__banner">
+      <?php the_post_thumbnail(); ?>
+      <h1>
+        <?php the_title(); ?>
+      </h1>
+    </div>
     <div class="container">
       <div class="blog__inner">
-        <h1 class="blog__title"><?php the_title(); ?></h1>
-        <?php the_post_thumbnail(); ?>
-        <?php the_content(); ?>
+        <div class="blog__content">
+          <span class="blog__date"> <?php echo get_the_date('d.m.Y'); ?></span>
+          <h1 class="blog__title"> <?php the_title() ?></h1>
+          <span class="blog__text"> <?php the_excerpt() ?></span>
+          <button class="blog__button" onclick="history.back()">Вернуться назад</button>
+          <div class="blog__tags">
+            <?php
+            the_category();
+            the_tags('', '');
+            ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <?php
+  get_template_part('assets/parts/widget-panel'); ?>
+
+  <?php
+  get_template_part('assets/parts/info'); ?>
+
 </main>
 
-<?php
-
-$tag = get_term_by('name', 'узбекистан', 'post_tag');
-
-if ($tag) {
-  $tag_id = $tag->term_id;
-  echo "ID метки 'узбекистан' равен: " . $tag_id;
-} else {
-  echo "Метка 'узбекистан' не найдена";
-}
-
-?>
 <?php get_footer(); ?>

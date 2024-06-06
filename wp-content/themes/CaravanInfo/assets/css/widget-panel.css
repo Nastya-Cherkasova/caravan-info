@@ -1,7 +1,6 @@
 .widget-panel {
 }
 .widget-panel__inner {
-  overflow: hidden;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
@@ -67,7 +66,11 @@
   .widget-panel__themes {
     display: none;
   }
+
 }
 
 @media (max-width: 1024px) {
+  .widget-panel .weather{
+    display: none;
+  }
 }

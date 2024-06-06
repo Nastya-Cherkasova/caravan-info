@@ -84,6 +84,7 @@
         global $post;
 
         $query = new WP_Query([
+          'posts_per_page' => -1,
           'offset'      => 3,
           'tag__not_in' => array(35, 36, 44)
         ]);

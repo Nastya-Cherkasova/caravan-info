@@ -156,10 +156,10 @@
 
 @media (max-width: 1024px) {
   .post__theme {
-    font-size: clamp(10px, 1.758vw, 18px);
+    font-size: clamp(14px, 1.758vw, 18px);
   }
   .post__country {
-    font-size: clamp(10px, 1.758vw, 18px);
+    font-size: clamp(14px, 1.758vw, 18px);
   }
 }
 
