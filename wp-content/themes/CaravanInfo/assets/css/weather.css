@@ -1,0 +1,110 @@
+.weather {
+  background: var(--bg-gradient);
+  border: 3px solid var(--white);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  box-shadow: var(--shadow);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.weather__city {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  border: 1px solid var(--white);
+  &:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 4;
+  }
+  &:nth-child(2) {
+    grid-area: 1 / 4 / 2 / 7;
+  }
+  &:nth-child(3) {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+  &:nth-child(4) {
+    grid-area: 2 / 3 / 3 / 5;
+  }
+  &:nth-child(5) {
+    grid-area: 2 / 5 / 3 / 7;
+  }
+}
+[data-moscow] {
+}
+
+[data-astana] {
+}
+
+[data-tashkent] {
+}
+
+[data-bishkek] {
+}
+
+[data-dushanbe] {
+}
+[data-image] {
+}
+
+[data-name] {
+  font-size: 40px;
+  font-weight: 700;
+}
+[data-day],
+[data-dayName] {
+  font-size: 26px;
+  font-style: italic;
+}
+[data-max],
+[data-min] {
+  font-size: 51px;
+  font-weight: 600;
+  width: fit-content;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "°C";
+    top: 0;
+    left: 100%;
+    font-size: 1.6rem;
+  }
+}
+[data-max] {
+  color: var(--black);
+}
+[data-min] {
+  color: #989898;
+  margin-right: 25px;
+}
+
+.weather__top {
+  display: flex;
+  justify-content: space-between;
+}
+.weather__bot {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.weather__bot-img {
+  width: 70%;
+}
+.weather__bot-temp {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  justify-content: space-evenly;
+}
+.weather__top-scnd {
+}
+.weather__mid {
+  display: flex;
+  justify-content: space-between;
+}
+.weather__img {
+}
+.weather__bot-scnd {
+  display: flex;
+  justify-content: space-between;
+}
+/* °C  */

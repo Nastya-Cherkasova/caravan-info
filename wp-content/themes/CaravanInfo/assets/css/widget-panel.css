@@ -50,11 +50,11 @@
 }
 
 .widget-panel .weather {
-  flex-grow: 1;
-  img {
-    object-fit: contain;
-  }
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
+
+.weather__city{}
 
 @media (max-width: 1660px) {
 }
@@ -66,11 +66,10 @@
   .widget-panel__themes {
     display: none;
   }
-
 }
 
 @media (max-width: 1024px) {
-  .widget-panel .weather{
+  .widget-panel .weather {
     display: none;
   }
 }

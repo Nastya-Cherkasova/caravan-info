@@ -4,51 +4,91 @@
       <div class="widget-panel__other">
 
         <div class="weather">
-          <img src="<?php bloginfo('template_url'); ?>/assets/img/common/weather.png" alt="">
-          <!-- <div id="19a2b17fe451f28c6c40149ca898ca0b" class="ww-informers-box-854753">
-            <p class="ww-informers-box-854754"><a href="https://world-weather.ru/">world-weather.ru</a><br><a href="https://world-weather.ru/pogoda/russia/saint_petersburg/">Прогноз погоды в Санкт-Петербурге на завтра</a></p>
+          <!-- <img src="<?php bloginfo('template_url'); ?>/assets/img/common/weather.png" alt=""> -->
+
+          <!-- Москва -->
+          <div class="weather__city" data-moscow>
+            <div class="weather__top">
+              <span data-name>Мосвка</span>
+              <div>
+                <span data-day></span>
+                <span data-dayName></span>
+              </div>
+            </div>
+            <div class="weather__bot">
+              <img class="weather__bot-img" data-image>
+              <div class="weather__bot-temp">
+                <span data-max></span>
+                <span data-min></span>
+              </div>
+            </div>
+            <span hidden="hidden" data-descr></span>
           </div>
-          <script async type="text/javascript" charset="utf-8" src="https://world-weather.ru/wwinformer.php?userid=19a2b17fe451f28c6c40149ca898ca0b"></script>
-          <style>
-            .ww-informers-box-854754 {
-              -webkit-animation-name: ww-informers54;
-              animation-name: ww-informers54;
-              -webkit-animation-duration: 1.5s;
-              animation-duration: 1.5s;
-              white-space: nowrap;
-              overflow: hidden;
-              -o-text-overflow: ellipsis;
-              text-overflow: ellipsis;
-              font-size: 12px;
-              font-family: Arial;
-              line-height: 18px;
-              text-align: center
-            }
 
-            @-webkit-keyframes ww-informers54 {
+          <!-- Нур-Султан -->
+          <div class="weather__city" data-astana>
+            <div class="weather__top">
+              <span data-name>Астана</span>
+              <div>
+                <span data-day></span>
+                <span data-dayName></span>
+              </div>
+            </div>
+            <div class="weather__bot">
+              <img class="weather__bot-img" data-image>
+              <div class="weather__bot-temp">
+                <span data-max></span>
+                <span data-min></span>
+              </div>
+            </div>
+            <span hidden="hidden" data-descr></span>
+          </div>
 
-              0%,
-              80% {
-                opacity: 0
-              }
+          <!-- Ташкент -->
+          <div class="weather__city" data-tashkent>
+            <span class="weather__top-scnd" data-name>Тошкент</span>
+            <div class="weather__mid">
+              <span data-day></span>
+              <img class="weather__img" data-image>
+              <span data-dayName></span>
+            </div>
+            <div class="weather__bot-scnd">
+              <span data-max></span>
+              <span data-min></span>
+            </div>
+            <span hidden="hidden" data-descr></span>
+          </div>
 
-              100% {
-                opacity: 1
-              }
-            }
+          <!-- Бишкек -->
+          <div class="weather__city" data-bishkek>
+            <span class="weather__top-scnd" data-name>Бишкек</span>
+            <div class="weather__mid">
+              <span data-day></span>
+              <img class="weather__img" data-image>
+              <span data-dayName></span>
+            </div>
+            <div class="weather__bot-scnd">
+              <span data-max></span>
+              <span data-min></span>
+            </div>
+            <span hidden="hidden" data-descr></span>
+          </div>
 
-            @keyframes ww-informers54 {
+          <!-- Душанбе -->
+          <div class="weather__city" data-dushanbe>
+            <span class="weather__top-scnd" data-name>Душанбе</span>
+            <div class="weather__mid">
+              <span data-day></span>
+              <img class="weather__img" data-image>
+              <span data-dayName></span>
+            </div>
+            <div class="weather__bot-scnd">
+              <span data-max></span>
+              <span data-min></span>
+            </div>
+            <span hidden="hidden" data-descr></span>
+          </div>
 
-              0%,
-              80% {
-                opacity: 0
-              }
-
-              100% {
-                opacity: 1
-              }
-            }
-          </style> -->
         </div>
 
         <?php wp_nav_menu([
