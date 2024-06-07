@@ -6,7 +6,7 @@ var dushanbe = document.querySelector("[data-dushanbe]");
 var date = new Date();
 var today = date.getDate();
 var month = date.getMonth();
-
+console.log(moscow.querySelector("[data-image]").src + `dasd`);
 let dayOfWeek = date.getDay();
 
 // Массив с названиями дней недели
@@ -41,9 +41,7 @@ fetch(
     moscow.querySelector("[data-dayName]").innerText = dayName;
     moscow.querySelector("[data-max]").innerText = max;
     moscow.querySelector("[data-min]").innerText = min;
-    moscow.querySelector(
-      "[data-image]"
-    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    moscow.querySelector("[data-image]").src = moscow.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     moscow.querySelector("[data-descr]").innerText = descr;
   })
   .catch((error) => {
@@ -66,9 +64,7 @@ fetch(
     bishkek.querySelector("[data-dayName]").innerText = dayName;
     bishkek.querySelector("[data-max]").innerText = max;
     bishkek.querySelector("[data-min]").innerText = min;
-    bishkek.querySelector(
-      "[data-image]"
-    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    bishkek.querySelector("[data-image]").src = bishkek.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     bishkek.querySelector("[data-descr]").innerText = descr;
   })
   .catch((error) => {
@@ -91,9 +87,7 @@ fetch(
     astana.querySelector("[data-dayName]").innerText = dayName;
     astana.querySelector("[data-max]").innerText = max;
     astana.querySelector("[data-min]").innerText = min;
-    astana.querySelector(
-      "[data-image]"
-    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    astana.querySelector("[data-image]").src = astana.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     astana.querySelector("[data-descr]").innerText = descr;
   })
   .catch((error) => {
@@ -116,9 +110,7 @@ fetch(
     tashkent.querySelector("[data-dayName]").innerText = dayName;
     tashkent.querySelector("[data-max]").innerText = max;
     tashkent.querySelector("[data-min]").innerText = min;
-    tashkent.querySelector(
-      "[data-image]"
-    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    tashkent.querySelector("[data-image]").src = tashkent.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     tashkent.querySelector("[data-descr]").innerText = descr;
   })
   .catch((error) => {
@@ -141,9 +133,7 @@ fetch(
     dushanbe.querySelector("[data-dayName]").innerText = dayName;
     dushanbe.querySelector("[data-max]").innerText = max;
     dushanbe.querySelector("[data-min]").innerText = min;
-    dushanbe.querySelector(
-      "[data-image]"
-    ).src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    dushanbe.querySelector("[data-image]").src = dushanbe.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     dushanbe.querySelector("[data-descr]").innerText = descr;
   })
   .catch((error) => {

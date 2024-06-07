@@ -107,5 +107,6 @@
 .weather__bot-scnd {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
 }
 /* °C  */

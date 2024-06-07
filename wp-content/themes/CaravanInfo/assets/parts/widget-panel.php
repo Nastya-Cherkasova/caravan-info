@@ -16,7 +16,7 @@
               </div>
             </div>
             <div class="weather__bot">
-              <img class="weather__bot-img" data-image>
+              <img class="weather__bot-img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
               <div class="weather__bot-temp">
                 <span data-max></span>
                 <span data-min></span>
@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="weather__bot">
-              <img class="weather__bot-img" data-image>
+              <img class="weather__bot-img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
               <div class="weather__bot-temp">
                 <span data-max></span>
                 <span data-min></span>
@@ -49,7 +49,7 @@
             <span class="weather__top-scnd" data-name>Тошкент</span>
             <div class="weather__mid">
               <span data-day></span>
-              <img class="weather__img" data-image>
+              <img class="weather__img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
               <span data-dayName></span>
             </div>
             <div class="weather__bot-scnd">
@@ -64,7 +64,7 @@
             <span class="weather__top-scnd" data-name>Бишкек</span>
             <div class="weather__mid">
               <span data-day></span>
-              <img class="weather__img" data-image>
+              <img class="weather__img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
               <span data-dayName></span>
             </div>
             <div class="weather__bot-scnd">
@@ -79,7 +79,7 @@
             <span class="weather__top-scnd" data-name>Душанбе</span>
             <div class="weather__mid">
               <span data-day></span>
-              <img class="weather__img" data-image>
+              <img class="weather__img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
               <span data-dayName></span>
             </div>
             <div class="weather__bot-scnd">

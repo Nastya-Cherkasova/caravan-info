@@ -71,6 +71,10 @@ $(function () {
         currentCards.slice(0, 4).addClass("show");
       }
     }
+    window.scrollTo(0, pos);
+    if ($(".other-news__inner > .post:hidden").length == 0) {
+      $(".other-news__show-more").hide();
+    }
 
     $(".other-news__show-more").on("click", function (e) {
       e.preventDefault();
