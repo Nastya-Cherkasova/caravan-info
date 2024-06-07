@@ -104,7 +104,29 @@ add_action('widgets_init', 'caravan_widgets_init');
 // Удаление конструкции [...] на конце the_excerpt();
 add_filter('excerpt_more', fn () => '...');
 
-//  Изменение длины обрезаемого текста the_excerpt();
-add_filter('excerpt_length', function () {
-  return 999;
+// Добавление функции для кастомного excerpt
+function custom_excerpt($text = '', $length = 55) {
+    if ('' === $text) {
+        $text = get_the_content('');
+        $text = strip_shortcodes($text);
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]&gt;', $text);
+        $text = wp_trim_words($text, $length, '...');
+    }
+    return $text;
+}
+
+// Шорткод для использования кастомного excerpt в темах
+function custom_the_excerpt($length = 55) {
+    echo custom_excerpt('', $length);
+}
+
+// Использование шорткода в WordPress
+add_shortcode('custom_excerpt', function($atts) {
+    $atts = shortcode_atts(array(
+        'length' => 55,
+    ), $atts, 'custom_excerpt');
+
+    return custom_excerpt('', $atts['length']);
 });
+?>

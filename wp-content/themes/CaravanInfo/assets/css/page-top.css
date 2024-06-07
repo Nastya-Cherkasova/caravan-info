@@ -100,6 +100,7 @@
 .page-top .container {
   position: relative;
   z-index: 1;
+  background: url(../img/page-top/bg.svg) left bottom / auto 100% no-repeat;
 }
 
 .page-top__inner {
@@ -159,17 +160,79 @@
 }
 
 @media (max-width: 1024px) {
-  .page-top .rama {
+  .page-top {
+    padding: 31px;
     &::after,
     &::before {
-      background: url("../img/info/border.svg") repeat-x center / auto 68%;
+      width: 31px;
+      height: 31px;
+      background: url("../img/info/angle.svg") no-repeat center / auto 56%;
+    }
+  }
+
+  .page-top .container {
+    background: url(../img/page-top/bg.svg) left bottom / 100% auto no-repeat;
+  }
+
+  .page-top .angles {
+    width: calc(100% + 62px);
+    left: -31px;
+    top: 31px;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      width: 31px;
+      height: 31px;
+      bottom: 0;
+      background: url("../img/info/angle.svg") no-repeat center / auto 56%;
+    }
+
+    &::after {
+      right: 0;
+      rotate: 180deg;
+    }
+    &::before {
+      rotate: 275deg;
+      left: 0;
+    }
+  }
+
+  .page-top .rama {
+    width: calc(100% - 62px);
+    height: calc(100% - 62px);
+    &::after,
+    &::before {
+      height: 31px;
     }
   }
 
   .page-top .rama .rama2 {
     &::after,
     &::before {
-      background: url("../img/info/border.svg") repeat-y center / 68% auto;
+      width: 31px;
+    }
+  }
+
+  .page-top__inner {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 5px;
+  }
+
+  .page-top__text {
+    padding: 10px 0 90px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .page-top__logo {
+    display: block;
+    width: 35%;
+    img {
+      width: 100%;
     }
   }
 }

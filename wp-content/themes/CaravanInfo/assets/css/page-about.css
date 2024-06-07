@@ -3,7 +3,6 @@
 .cards__inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 1fr);
   gap: 50px 40px;
 }
 .card {
@@ -43,7 +42,7 @@
   background-color: #c27c36;
 }
 .card:nth-child(3) .card__title {
-  font-size: 88px;
+  font-size: clamp(38px, 5.301vw, 88px);
   margin: 50px 0 85px;
 }
 
@@ -59,7 +58,7 @@
 }
 .card:nth-child(4) .card__title {
   margin: 24px 0 50px;
-  font-size: 68px;
+  font-size: clamp(28px, 4.096vw, 68px);
 }
 
 .card:nth-child(4) .card__image {
@@ -80,13 +79,61 @@
 }
 
 .card__title {
-  font-size: 48px;
+  font-size: clamp(18px, 2.892vw, 48px);
   font-weight: 700;
 }
 
 .card__descr {
-  font-size: 28px;
+  font-size: clamp(14px, 1.687vw, 28px);
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .cards__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    &:nth-child(n) {
+      grid-area: unset;
+      padding: 24px;
+      flex-direction: column;
+    }
+    gap: 16px;
+  }
+  .card__text {
+    gap: 16px;
+  }
+
+  .card:nth-child(1) .card__title {
+    margin: 0;
+  }
+
+  .card:nth-child(2) .card__title {
+    margin: 0;
+  }
+
+  .card:nth-child(3) .card__title {
+    margin: 0;
+  }
+
+  .card:nth-child(4) .card__text {
+    max-width: 100%;
+  }
+  .card:nth-child(4) .card__title {
+    margin: 0;
+  }
+  .card:nth-child(4) .card__image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 552px) {
+  .card {
+    &:nth-child(n) {
+      padding: 12px 12px 24px;
+    }
+  }
 }

@@ -99,7 +99,9 @@
               </div>
               <span class="post__date"> <?php echo get_the_date('d.m.Y'); ?></span>
               <a href="<?php echo get_the_permalink(); ?>" class="post__title"><?php the_title() ?></a>
-              <?php the_excerpt(); ?>
+              <p>
+                <?php custom_the_excerpt(15); ?>
+              </p>
               <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
               <div class="post__tags">
                 <?php

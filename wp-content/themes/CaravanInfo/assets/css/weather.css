@@ -81,6 +81,7 @@
 .weather__top {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 .weather__bot {
   display: flex;
