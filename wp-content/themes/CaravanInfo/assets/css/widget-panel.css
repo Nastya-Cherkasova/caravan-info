@@ -49,6 +49,15 @@
   }
 }
 
+.widget-panel .theme:hover {
+  &::before{
+    filter: invert(0);
+  }
+  a{
+    color: var(--white);
+  }
+}
+
 .widget-panel .weather {
   display: grid;
   grid-template-columns: repeat(6, 1fr);

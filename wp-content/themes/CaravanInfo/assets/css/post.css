@@ -75,6 +75,16 @@
   font-size: 18px;
   font-weight: 700;
   color: var(--white);
+  transition: background 0.3s;
+
+  &:hover {
+    color: var(--black);
+    border-color: var(--black);
+    background: transparent;
+  }
+}
+.post__theme:hover::before {
+  filter: invert(1);
 }
 
 .post__country {

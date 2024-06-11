@@ -227,13 +227,11 @@ $tag = get_query_var('tag');
 
 
   <?php
-  get_template_part('assets/parts/widget-panel'); ?>
+  get_template_part('assets/parts/widget-panel');
 
-  <?php
-  get_template_part('assets/parts/info'); ?>
 
-  <!-- Блок только для тэга "Караван Историй" -->
-  <?php
+  get_template_part('assets/parts/info');
+
   get_template_part('assets/parts/history'); ?>
 
   </div>

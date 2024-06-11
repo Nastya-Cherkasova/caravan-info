@@ -85,10 +85,13 @@
 }
 .weather__bot {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
 }
 .weather__bot-img {
   width: 70%;
+    max-width: 200px;
+    margin: 0 auto;
 }
 .weather__bot-temp {
   display: flex;

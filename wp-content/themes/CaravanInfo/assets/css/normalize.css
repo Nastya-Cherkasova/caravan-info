@@ -56,6 +56,27 @@ body {
   min-height: 100vh;
   min-width: 360px;
   position: relative;
+  scroll-behavior: smooth;
+}
+
+.js-alert {
+  position: relative;
+  z-index: 99999999999999999999;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.js-alert div {
+  font-weight: 600;
+  font-size: clamp(16px, 2.5vw, 48px);
+  text-align: center;
+}
+
+.js-alert a {
+  font-weight: 600;
+  font-size: clamp(12px, 2.169vw, 36px);
+  color: var(--red);
 }
 
 main {
@@ -106,7 +127,7 @@ main {
     width: 100%;
     height: 100%;
     z-index: -1;
-    scale: 1.02;
+    scale: 0;
     top: 0;
     left: 0;
   }
@@ -121,6 +142,7 @@ main {
     }
     &::after {
       z-index: 3;
+      scale: 1.02;
     }
   }
 }
@@ -132,6 +154,7 @@ main {
   }
   &::after {
     z-index: 3;
+    scale: 1.02;
   }
 }
 .category-kgz ._kg:not(.post__country) {
@@ -141,6 +164,7 @@ main {
   }
   &::after {
     z-index: 3;
+    scale: 1.02;
   }
 }
 .category-kz ._kz:not(.post__country) {
@@ -150,6 +174,7 @@ main {
   }
   &::after {
     z-index: 3;
+    scale: 1.02;
   }
 }
 .category-uzb ._uz:not(.post__country) {
@@ -159,6 +184,7 @@ main {
   }
   &::after {
     z-index: 3;
+    scale: 1.02;
   }
 }
 .category-taj ._taj:not(.post__country) {
@@ -168,6 +194,7 @@ main {
   }
   &::after {
     z-index: 3;
+    scale: 1.02;
   }
 }
 

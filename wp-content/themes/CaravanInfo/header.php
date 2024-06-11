@@ -9,6 +9,17 @@
 
 <body <?php body_class(); ?>>
   <?php wp_head(); ?>
+  <noscript class="js-alert">
+    <div>
+      Ваш браузер не&nbsp;поддерживает JavaScript или JavaScript отключен. Пожалуйста, включите JavaScript для лучшего взаимодействия с&nbsp;сайтом.
+    </div>
+    <div>
+      <a href="https://www.enablejavascript.io/ru" target="_blank" style="color: red;">
+        Нажмите сюда чтобы посмотреть как включить JavaScript
+      </a>
+    </div>
+
+  </noscript>
   <header class="header" id="header">
     <div class="container">
       <div class="header__inner">

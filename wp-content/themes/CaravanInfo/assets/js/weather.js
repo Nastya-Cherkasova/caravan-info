@@ -6,7 +6,6 @@ var dushanbe = document.querySelector("[data-dushanbe]");
 var date = new Date();
 var today = date.getDate();
 var month = date.getMonth();
-console.log(moscow.querySelector("[data-image]").src + `dasd`);
 let dayOfWeek = date.getDay();
 
 // Массив с названиями дней недели

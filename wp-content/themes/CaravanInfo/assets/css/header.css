@@ -335,6 +335,8 @@
     position: absolute;
     background: var(--white);
     width: 75%;
+    height: 100vh;
+    overflow: scroll;
     padding: 10px 20px;
     top: 0%;
     right: -10px;
@@ -351,6 +353,25 @@
     filter: invert(1);
   }
 
+  .header__content .theme:hover::before {
+    filter: invert(0);
+  }
+  .header__content .header__themes {
+    flex-direction: column;
+    gap: 6px;
+    .theme {
+      border-color: var(--black);
+      justify-content: start;
+      max-width: 210px;
+
+    }
+  }
+  .header__content .theme:hover{
+    a{
+      color: var(--white);
+    }
+  }
+
   .header__content .header__country {
     flex-direction: column;
     gap: 7px;
@@ -360,13 +381,35 @@
     }
   }
 
-  .header__content .header__themes {
-    flex-direction: column;
-    gap: 6px;
-    .theme {
-      border-color: var(--black);
-      justify-content: start;
-      max-width: 210px;
-    }
+  .header__content .theme:hover._business {
+      border-color: var(--red);
   }
+  .header__content .theme:hover._tourism {
+      border-color: var(--cyan);
+  }
+  .header__content .theme:hover._culture {
+      border-color: var(--pink);
+  }
+  .header__content .theme:hover._science {
+      border-color: var(--blue);
+  }
+  .header__content .theme:hover._sport {
+      border-color: var(--green);
+  }
+  .header__content .theme:hover._society {
+      border-color: var(--yellow);
+  }
+  .header__content .theme:hover._apk {
+      border-color: var(--brown);
+  }
+  .header__content .theme:hover._edu {
+      border-color: var(--sky);
+  }
+  .header__content .theme:hover._history {
+      border-color: var(--purple);
+  }
+  .header__content .theme:hover._stars {
+      border-color: var(--gray);
+  }
+
 }
