@@ -79,6 +79,5 @@
 
 @media (max-width: 1024px) {
   .widget-panel .weather {
-    display: none;
   }
 }

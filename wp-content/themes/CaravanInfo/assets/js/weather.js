@@ -9,7 +9,7 @@ var month = date.getMonth();
 let dayOfWeek = date.getDay();
 
 // Массив с названиями дней недели
-let days = ["(вс)", "(пн)", "(вн)", "(ср)", "(чт)", "(пт)", "(сб)"];
+let days = ["(вс)", "(пн)", "(вт)", "(ср)", "(чт)", "(пт)", "(сб)"];
 
 // Получаем название дня недели
 let dayName = days[dayOfWeek];
@@ -40,11 +40,9 @@ fetch(
     moscow.querySelector("[data-dayName]").innerText = dayName;
     moscow.querySelector("[data-max]").innerText = max;
     moscow.querySelector("[data-min]").innerText = min;
-    moscow.querySelector("[data-image]").src = moscow.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
+    moscow.querySelector("[data-image]").src =
+      moscow.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     moscow.querySelector("[data-descr]").innerText = descr;
-  })
-  .catch((error) => {
-    console.log("Произошла ошибка при получении данных:", error);
   });
 
 // Запрос погоды Бишкека
@@ -63,11 +61,9 @@ fetch(
     bishkek.querySelector("[data-dayName]").innerText = dayName;
     bishkek.querySelector("[data-max]").innerText = max;
     bishkek.querySelector("[data-min]").innerText = min;
-    bishkek.querySelector("[data-image]").src = bishkek.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
+    bishkek.querySelector("[data-image]").src =
+      bishkek.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     bishkek.querySelector("[data-descr]").innerText = descr;
-  })
-  .catch((error) => {
-    console.log("Произошла ошибка при получении данных:", error);
   });
 
 // Запрос погоды Астана
@@ -86,11 +82,9 @@ fetch(
     astana.querySelector("[data-dayName]").innerText = dayName;
     astana.querySelector("[data-max]").innerText = max;
     astana.querySelector("[data-min]").innerText = min;
-    astana.querySelector("[data-image]").src = astana.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
+    astana.querySelector("[data-image]").src =
+      astana.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
     astana.querySelector("[data-descr]").innerText = descr;
-  })
-  .catch((error) => {
-    console.log("Произошла ошибка при получении данных:", error);
   });
 
 // Запрос погоды Ташкент
@@ -109,11 +103,10 @@ fetch(
     tashkent.querySelector("[data-dayName]").innerText = dayName;
     tashkent.querySelector("[data-max]").innerText = max;
     tashkent.querySelector("[data-min]").innerText = min;
-    tashkent.querySelector("[data-image]").src = tashkent.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
+    tashkent.querySelector("[data-image]").src =
+      tashkent.querySelector("[data-image]").src +
+      `${data.weather[0].icon}.svg`;
     tashkent.querySelector("[data-descr]").innerText = descr;
-  })
-  .catch((error) => {
-    console.log("Произошла ошибка при получении данных:", error);
   });
 
 // Запрос погоды Душанбе
@@ -132,9 +125,8 @@ fetch(
     dushanbe.querySelector("[data-dayName]").innerText = dayName;
     dushanbe.querySelector("[data-max]").innerText = max;
     dushanbe.querySelector("[data-min]").innerText = min;
-    dushanbe.querySelector("[data-image]").src = dushanbe.querySelector("[data-image]").src + `${data.weather[0].icon}.svg`;
+    dushanbe.querySelector("[data-image]").src =
+      dushanbe.querySelector("[data-image]").src +
+      `${data.weather[0].icon}.svg`;
     dushanbe.querySelector("[data-descr]").innerText = descr;
-  })
-  .catch((error) => {
-    console.log("Произошла ошибка при получении данных:", error);
   });

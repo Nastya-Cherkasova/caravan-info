@@ -149,6 +149,8 @@
   border-radius: 10px;
   border: 2px solid var(--black);
   transition: 0.3s;
+  position: relative;
+  z-index: 1;
   &:hover {
     background: var(--black);
     color: var(--white);

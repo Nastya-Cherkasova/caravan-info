@@ -135,3 +135,10 @@
     --width: 25px;
   }
 }
+
+@media (max-width: 552px) {
+  .wp-calendar-nav-next svg,
+  .wp-calendar-nav-prev svg{
+    height: 13px;
+  }
+}

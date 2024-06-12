@@ -51,9 +51,6 @@
             $query_args['monthnum'] = $month;
             $query_args['day'] = $day;
           } elseif ($year && $month) {
-            // Если параметры 'year' и 'monthnum' переданы, значит пользователь кликнул на месяц
-            $page_title = date('F Y', strtotime("$year-$month-01"));
-            echo '<h1>' . $page_title . '</h1>';
 
             $query_args['year'] = $year;
             $query_args['monthnum'] = $month;
@@ -122,8 +119,6 @@
           $query_args['day'] = $day;
         } elseif ($year && $month) {
           // Если параметры 'year' и 'monthnum' переданы, значит пользователь кликнул на месяц
-          $page_title = date('F Y', strtotime("$year-$month-01"));
-          echo '<h1>' . $page_title . '</h1>';
 
           $query_args['year'] = $year;
           $query_args['monthnum'] = $month;
@@ -144,8 +139,8 @@
               <span class="post__date"> <?php echo get_the_date('d.m.Y'); ?></span>
               <a href="<?php echo get_the_permalink(); ?>" class="post__title"><?php the_title(); ?></a>
               <p>
-              <?php custom_the_excerpt(15); ?>
-            </p>
+                <?php custom_the_excerpt(15); ?>
+              </p>
               <a href="<?php echo get_the_permalink(); ?>" class="post__btn">Подробнее</a>
               <div class="post__tags">
                 <?php the_tags('', ''); ?>
