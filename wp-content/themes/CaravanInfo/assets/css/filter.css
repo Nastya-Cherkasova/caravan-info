@@ -52,7 +52,7 @@
   }
   .filter__top .post {
     max-width: 100%;
-    min-height: unset; r
-    padding: 35px;
+    min-height: unset;
+    padding: 12px;
   }
 }

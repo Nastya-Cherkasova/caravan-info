@@ -9,7 +9,7 @@
           <!-- Москва -->
           <div class="weather__city" data-moscow>
             <div class="weather__top">
-              <span data-name>Мосвка</span>
+              <span data-name>Москва</span>
               <div>
                 <span data-day></span>
                 <span data-dayName></span>
@@ -46,7 +46,7 @@
 
           <!-- Ташкент -->
           <div class="weather__city" data-tashkent>
-            <span class="weather__top-scnd" data-name>Тошкент</span>
+            <span class="weather__top-scnd" data-name>Ташкент</span>
             <div class="weather__mid">
               <span data-day></span>
               <img class="weather__img" data-image src="<?php bloginfo('template_url'); ?>/assets/img/weather/">
