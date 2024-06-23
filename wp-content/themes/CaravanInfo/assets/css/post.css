@@ -62,7 +62,8 @@
 }
 .post__tags {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 7px 20px;
 }
 
 .post__theme {
@@ -75,12 +76,16 @@
   font-size: 18px;
   font-weight: 700;
   color: var(--white);
-  transition: background 0.3s;
+  transition: all 0.3s;
 
   &:hover {
     color: var(--black);
     border-color: var(--black);
     background: transparent;
+  }
+
+  &::before {
+    transition: all 0.3s;
   }
 }
 .post__theme:hover::before {
@@ -177,12 +182,12 @@
     margin-bottom: 30px;
   }
 
-  .post__btn{
+  .post__btn {
     margin-bottom: 40px;
   }
 
   .post__tags {
-    gap: 14px;
+    gap: 7px 14px;
   }
 
   .post__theme {
@@ -220,7 +225,7 @@
   }
 
   .post__tags {
-    gap: 10px;
+    gap: 7px 10px;
   }
 
   .post__theme {

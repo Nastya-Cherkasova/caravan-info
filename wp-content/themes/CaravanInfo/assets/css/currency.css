@@ -18,6 +18,11 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 100px;
+  margin-bottom: clamp(20px, 4.217vw, 70px);
+}
+.widget_currencyconverter_table > table > span {
+  font-size: clamp(12px, 1.205vw, 20px);
+  font-style: italic;
 }
 
 .flag__wrapper {

@@ -1,12 +1,13 @@
 $(function () {
   scrollTargetInit();
+  flagsInit();
   initMenu();
   headerScroll();
   initShowMore();
-  tagColor();
+  // tagColor();
+  flagsInit();
   infoStyling();
   partnerRepeater();
-  flagsInit();
   icoInit();
 
   // класс для body - адаптивка
@@ -88,140 +89,66 @@ $(function () {
     });
   }
 
-  // Цвет всем тегам в соотвествии с текстом тега
-  function tagColor() {
-    let business = "Бизнес",
-      tourism = "Туризм",
-      culture = "Культура",
-      science = "Наука",
-      sports = "Спорт",
-      society = "Общество",
-      agriculturalNews = "Новости АПК",
-      education = "Образование",
-      caravanOfStories = "Караван историй",
-      outstandingPersonalities = "Выдающиеся личности",
-      tags = $(".post__theme");
-
-    function bgChange(el, cls) {
-      el.addClass(cls);
-    }
-
-    tags.each(function () {
-      switch ($(this)[0].innerHTML) {
-        case business:
-          bgChange($(this), "red");
-          break;
-        case society:
-          bgChange($(this), "yellow");
-          break;
-        case culture:
-          bgChange($(this), "pink");
-          break;
-        case science:
-          bgChange($(this), "blue");
-          break;
-        case sports:
-          bgChange($(this), "green");
-          break;
-        case agriculturalNews:
-          bgChange($(this), "brown");
-          break;
-        case tourism:
-          bgChange($(this), "cyan");
-          break;
-        case education:
-          bgChange($(this), "sky");
-          break;
-        case outstandingPersonalities:
-          bgChange($(this), "gray");
-          break;
-        case caravanOfStories:
-          bgChange($(this), "purple");
-          break;
-      }
-    });
-  }
-
-  // Добавляет флаги тегам
+  // Классы для стран
   function flagsInit() {
-    let theme = $(".post__country");
+    let countries = document.querySelectorAll(".post__country");
 
-    function countryClass(el, cls) {
-      el.addClass(cls);
-    }
-
-    theme.each(function () {
-      $(this).addClass("country");
-      switch ($(this)[0].innerHTML) {
-        case "Таджикистан":
-          countryClass($(this), "_taj");
-          break;
-        case "Кыргызстан":
-          countryClass($(this), "_kg");
-          break;
-        case "Узбекистан":
-          countryClass($(this), "_uz");
-          break;
-        case "Россия":
-          countryClass($(this), "_ru");
-          break;
-        case "Казахстан":
-          countryClass($(this), "_kz");
-          break;
-      }
-    });
+    countries.forEach(
+      function (el) {
+        el.classList.add("country");
+        if (el.href.includes("rus")) {
+          el.classList.add("_ru");
+        }
+        if (el.href.includes("kz")) {
+          el.classList.add("_kz");
+        }
+        if (el.href.includes("uzb")) {
+          el.classList.add("_uz");
+        }
+        if (el.href.includes("kgz")) {
+          el.classList.add("_kg");
+        }
+        if (el.href.includes("taj")) {
+          el.classList.add("_taj");
+        }
+      }.bind(this)
+    );
   }
 
-  // Добавляет иконки тегам
   function icoInit() {
-    let business = "Бизнес",
-      tourism = "Туризм",
-      culture = "Культура",
-      science = "Наука",
-      sports = "Спорт",
-      society = "Общество",
-      agriculturalNews = "Новости АПК",
-      education = "Образование",
-      caravanOfStories = "Караван историй",
-      outstandingPersonalities = "Выдающиеся личности",
-      tag = $(".post__theme");
+    let tag = document.querySelectorAll(".post__theme");
 
-    function tagClass(el, cls) {
-      el.addClass(cls);
-    }
-
-    tag.each(function () {
-      switch ($(this)[0].innerHTML) {
-        case business:
-          tagClass($(this), "theme _business");
-          break;
-        case society:
-          tagClass($(this), "theme _society");
-          break;
-        case culture:
-          tagClass($(this), "theme _culture");
-          break;
-        case science:
-          tagClass($(this), "theme _science");
-          break;
-        case sports:
-          tagClass($(this), "theme _sport");
-          break;
-        case agriculturalNews:
-          tagClass($(this), "theme _apk");
-          break;
-        case tourism:
-          tagClass($(this), "theme _tourism");
-          break;
-        case education:
-          tagClass($(this), "theme _edu");
-          break;
-        case outstandingPersonalities:
-          tagClass($(this), "theme _stars");
-          break;
-        case caravanOfStories:
-          tagClass($(this), "theme _history");
-          break;
+    tag.forEach(function (el) {
+      el.classList.add("theme");
+      if (el.href.includes("business")) {
+        el.classList.add("_business", "red");
+      }
+      if (el.href.includes("tourism")) {
+        el.classList.add("_tourism", "cyan");
+      }
+      if (el.href.includes("culture")) {
+        el.classList.add("_culture", "pink");
+      }
+      if (el.href.includes("sport")) {
+        el.classList.add("_sport", "green");
+      }
+      if (el.href.includes("society")) {
+        el.classList.add("_society", "yellow");
+      }
+      if (el.href.includes("apk")) {
+        el.classList.add("_apk", "brown");
+      }
+      if (el.href.includes("edu")) {
+        el.classList.add("_edu", "sky");
+      }
+      if (el.href.includes("history")) {
+        el.classList.add("_history", "purple");
+      }
+      if (el.href.includes("stars")) {
+        el.classList.add("_stars", "gray");
+      }
+      if (el.href.includes("science")) {
+        el.classList.add("_science", "blue");
       }
     });
   }
@@ -257,3 +184,5 @@ function langChanger() {
   langMenu.classList.toggle("active");
   langBtn.classList.toggle("active");
 }
+
+document.addEventListener("DOMContentLoaded", function () {});

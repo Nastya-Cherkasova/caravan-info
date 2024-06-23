@@ -48,6 +48,7 @@
 .blog__title {
   font-size: clamp(28px, 3.313vw, 55px);
   font-weight: 700;
+  line-height: 105%;
 }
 
 .blog__text p {
@@ -78,7 +79,8 @@
 
 .blog__tags {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 5px 20px;
 }
 
 @media (max-width: 1660px) {
@@ -89,10 +91,15 @@
   }
 }
 @media (max-width: 1400px) {
-  
+  .blog__tags {
+    gap: 7px 14px;
+  }
 }
 @media (max-width: 1024px) {
   .blog__content {
     padding: 21px 12px;
+  }
+  .blog__tags {
+    gap: 7px 10px;
   }
 }

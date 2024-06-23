@@ -104,6 +104,10 @@ add_action('widgets_init', 'caravan_widgets_init');
 // Удаление конструкции [...] на конце the_excerpt();
 add_filter('excerpt_more', fn () => '...');
 
+add_filter( 'excerpt_length', function(){
+	return 99;
+} );
+
 // Добавление функции для кастомного excerpt
 function custom_excerpt($text = '', $length = 55)
 {

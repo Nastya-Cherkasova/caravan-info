@@ -135,7 +135,7 @@ main {
   a {
     z-index: 5;
   }
-  &:hover {
+  &:hover:not(._world) {
     a {
       color: transparent; /* финт ушами */
       scale: 9; /* финт ушами */
@@ -236,6 +236,12 @@ main {
   }
   &::before {
     background: url("../img/common/kz_ico.png") no-repeat center / cover;
+  }
+}
+
+._world {
+  &::before {
+    background: url("../img/common/world_ico.png") no-repeat center / cover;
   }
 }
 

@@ -141,9 +141,9 @@
 
 @media (max-width: 1660px) {
   .themes {
-    margin:  30px 0;
+    margin: 30px 0;
   }
-  
+
   .themes__list {
     gap: 10px 5px;
   }
@@ -170,7 +170,11 @@
     padding: 0 20px;
   }
 
-  .themes__list{
+  .theme._society {
+    --ico-width: 17px;
+  }
+
+  .themes__list {
     gap: 10px 10px;
   }
 }

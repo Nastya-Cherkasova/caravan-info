@@ -135,12 +135,12 @@
 }
 
 .top .country {
-  --flag-size: 80px;
-  --flag-padding: 13px;
+  --flag-size: 72px;
+  --flag-padding: 12px;
   --padding: 23px;
   background: var(--black);
   color: var(--white);
-  font-size: 31px;
+  font-size: 28px;
   border-radius: 84px;
 }
 
@@ -244,7 +244,7 @@
 @media (max-width: 1400px) {
   .top {
     background-image: url("../img/main/bg_map.png");
-    background-position: 60% center;
+    background-position: 66% 18%;
   }
   .top__inner {
     min-height: unset;
