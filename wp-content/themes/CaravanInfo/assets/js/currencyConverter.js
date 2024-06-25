@@ -38,8 +38,6 @@ if (document.querySelector(".widget_currencyconverter_table")) {
         // Вставляем span в конец таблицы, если нет следующего элемента после tbody
         table.appendChild(span);
       }
-
-      console.log(table);
     }
   }
 }

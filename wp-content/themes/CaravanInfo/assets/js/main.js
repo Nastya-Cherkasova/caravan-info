@@ -111,6 +111,9 @@ $(function () {
         if (el.href.includes("taj")) {
           el.classList.add("_taj");
         }
+        if (el.href.includes("world")) {
+          el.classList.add("_world");
+        }
       }.bind(this)
     );
   }
@@ -185,4 +188,13 @@ function langChanger() {
   langBtn.classList.toggle("active");
 }
 
-document.addEventListener("DOMContentLoaded", function () {});
+const offWorld = () => {
+  // Объединяем выборку всех ссылок внутри элементов с классом _world и всех ссылок с классом _world
+  let worldLinks = document.querySelectorAll("a[href='/category/world/']");
+
+  worldLinks.forEach((el) => {
+    el.style.pointerEvents = "none";
+  });
+};
+
+document.addEventListener("DOMContentLoaded", offWorld());
