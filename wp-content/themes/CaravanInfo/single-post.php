@@ -12,7 +12,7 @@
         <div class="blog__content">
           <span class="blog__date"> <?php echo get_the_date('d.m.Y'); ?></span>
           <h1 class="blog__title"> <?php the_title() ?></h1>
-          <span class="blog__text"> <?php the_excerpt() ?></span>
+          <span class="blog__text"> <?php the_content() ?></span>
           <button class="blog__button" onclick="history.back()">Вернуться назад</button>
           <div class="blog__tags">
             <?php

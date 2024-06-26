@@ -56,6 +56,10 @@
   line-height: 110%;
 }
 
+.blog__text figure {
+  display: none;
+}
+
 .blog__button {
   max-width: 547px;
   width: 100%;

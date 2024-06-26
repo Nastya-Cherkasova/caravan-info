@@ -132,6 +132,11 @@
   .footer {
     min-height: 490px;
   }
+
+  .footer__title{
+    max-width: unset;
+  }
+
   .footer__info {
     width: 60%;
   }
@@ -173,10 +178,11 @@
 
   .footer__title {
     flex-direction: row-reverse;
-    font-size: clamp(50px, 13.889vw, 70px);
+    font-size: clamp(40px, 4.217vw, 70px);
+    letter-spacing: -1.5px;
     margin: 0;
     margin-bottom: 48px;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   .footer__logo {

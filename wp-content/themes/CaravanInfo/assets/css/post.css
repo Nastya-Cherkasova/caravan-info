@@ -66,6 +66,12 @@
   gap: 7px 20px;
 }
 
+.post__tags .post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 20px;
+}
+
 .post__theme {
   height: 47px;
   border-radius: 23px;

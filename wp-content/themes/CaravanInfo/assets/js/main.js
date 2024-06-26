@@ -188,6 +188,18 @@ function langChanger() {
   langBtn.classList.toggle("active");
 }
 
+window.addEventListener("mouseup", (e) => {
+  if (!e.target.closest(".header__lang")) {
+    document
+      .querySelectorAll(".header__lang")
+      .forEach((el) => el.classList.remove("active"));
+    document
+      .querySelectorAll(".header__langs")
+      .forEach((el) => el.classList.remove("active"));
+    return;
+  }
+});
+
 const offWorld = () => {
   // Объединяем выборку всех ссылок внутри элементов с классом _world и всех ссылок с классом _world
   let worldLinks = document.querySelectorAll("a[href='/category/world/']");
